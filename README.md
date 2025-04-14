@@ -82,6 +82,9 @@ Aspiring Software Developer with a BSc in Computer Science from SFU 🎓 and mul
   <a href="https://www.linkedin.com/in/alinikan79/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-Ali%20Nikan-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
   </a>
+</p>
+
+<p align="left">
   <a href="mailto:ali.nikan79@gmail.com">
     <img src="https://img.shields.io/badge/Gmail-ali.nikan79@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail Badge"/>
   </a>
