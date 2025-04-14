@@ -7,7 +7,7 @@
 
 - 💬 Ask me about **Data Analysis, Artificial Intelligence, C/C++**
 
-- 📫 How to reach me **ana106@sfu.ca**
+- 📫 How to reach me **ali.nikan79@gmail.com**
 
 - ⚡ Fun fact **I love video games! (Also movies)**
 
