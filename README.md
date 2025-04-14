@@ -80,12 +80,9 @@ Aspiring Software Developer with a BSc in Computer Science from SFU 🎓 and mul
 
 <p align="left">
   <a href="https://www.linkedin.com/in/alinikan79/" target="_blank">
-    <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="alinikan79" height="30" width="40" />
+    <img src="https://img.shields.io/badge/LinkedIn-Ali%20Nikan-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
   </a>
   <a href="mailto:ali.nikan79@gmail.com">
-    <img align="center" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail" height="30" width="40" />
-  </a>
-  <a href="https://github.com/alinikan" target="_blank">
-    <img align="center" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" height="30" width="30" />
+    <img src="https://img.shields.io/badge/Gmail-ali.nikan79@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail Badge"/>
   </a>
 </p>
