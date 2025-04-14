@@ -9,6 +9,10 @@
 
 ---
 
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=1000&color=9F79EE&center=true&vCenter=true&width=435&lines=Aspiring+Software+Developer;ML+Enthusiast+%7C+Gamer+at+Heart;Builder+of+Cool+Things!)](https://git.io/typing-svg)
+
+---
+
 ### 🧠 About Me
 
 Aspiring Software Developer with a BSc in Computer Science from SFU 🎓 and multiple Dean’s Honour Roll distinctions. I love writing clean, efficient code and building cool projects—especially those that blend creativity with logic. Currently diving deep into **machine learning**, and exploring the world of **game development** with Unity and Unreal Engine.
@@ -43,36 +47,23 @@ Aspiring Software Developer with a BSc in Computer Science from SFU 🎓 and mul
 
 ---
 
-### 🧰 Languages and Tools
+### 🧰 Tech Stack
 
-<p align="left">
-  <a href="https://www.cprogramming.com/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" width="40" height="40" alt="C" /></a>
-  <a href="https://www.w3schools.com/cpp/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" width="40" height="40" alt="C++" /></a>
-  <a href="https://www.python.org" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="40" height="40" alt="Python" /></a>
-  <a href="https://www.java.com" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" width="40" height="40" alt="Java" /></a>
-  <a href="https://unity.com/" target="_blank"><img src="https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg" width="40" height="40" alt="Unity" /></a>
-  <a href="https://www.unrealengine.com/" target="_blank"><img src="https://cdn.worldvectorlogo.com/logos/unreal-engine.svg" width="40" height="40" alt="Unreal Engine" /></a>
-  <a href="https://flask.palletsprojects.com/" target="_blank"><img src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg" width="40" height="40" alt="Flask" /></a>
-  <a href="https://pandas.pydata.org/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original.svg" width="40" height="40" alt="Pandas" /></a>
-  <a href="https://numpy.org/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg" width="40" height="40" alt="NumPy" /></a>
-  <a href="https://matplotlib.org/" target="_blank"><img src="https://matplotlib.org/stable/_static/logo2_compressed.svg" width="40" height="40" alt="Matplotlib" /></a>
-  <a href="https://seaborn.pydata.org/" target="_blank"><img src="https://seaborn.pydata.org/_static/logo-wide-lightbg.svg" width="80" height="40" alt="Seaborn" /></a>
-  <a href="https://scikit-learn.org/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" width="40" height="40" alt="Scikit-Learn" /></a>
-  <a href="https://git-scm.com/" target="_blank"><img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" width="40" height="40" alt="Git" /></a>
-  <a href="https://www.linux.org/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" width="40" height="40" alt="Linux" /></a>
-  <a href="https://www.mathworks.com/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" width="40" height="40" alt="Matlab" /></a>
-  <a href="https://getbootstrap.com" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" width="40" height="40" alt="Bootstrap" /></a>
-</p>
-
----
-
-### 📈 GitHub Stats
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=alinikan&hide=Jupyter%20Notebook&show_icons=true&theme=dracula)
-
-[![GitHub Streak](https://streak-stats.demolab.com/?user=alinikan&theme=dracula)](https://git.io/streak-stats)
-
-[![trophy](https://github-profile-trophy.vercel.app/?username=alinikan&theme=dracula&margin-w=15)](https://github.com/ryo-ma/github-profile-trophy)
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![Unity](https://img.shields.io/badge/Unity-000000?style=for-the-badge&logo=unity&logoColor=white)
+![Unreal Engine](https://img.shields.io/badge/Unreal-Engine-black?style=for-the-badge&logo=unrealengine&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557c?style=for-the-badge&logo=matplotlib&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge&logo=python&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/Scikit_Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![MATLAB](https://img.shields.io/badge/MATLAB-orange?style=for-the-badge&logo=mathworks&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 
 ---
 
@@ -89,3 +80,25 @@ Aspiring Software Developer with a BSc in Computer Science from SFU 🎓 and mul
     <img src="https://img.shields.io/badge/Gmail-ali.nikan79@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail Badge"/>
   </a>
 </p>
+
+---
+
+### 📈 GitHub Stats
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=alinikan&hide=Jupyter%20Notebook&show_icons=true&theme=dracula)
+
+[![GitHub Streak](https://streak-stats.demolab.com/?user=alinikan&theme=dracula)](https://git.io/streak-stats)
+
+[![trophy](https://github-profile-trophy.vercel.app/?username=alinikan&theme=dracula&margin-w=15)](https://github.com/ryo-ma/github-profile-trophy)
+
+---
+
+### 💬 Dev Quote of the Day
+
+![Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dracula)
+
+---
+
+### 🌌 Contribution Galaxy
+
+[![GitHub Activity Graph](https://github-readme-activity-graph.cyclic.app/graph?username=alinikan&theme=dracula)](https://github.com/ashutosh00710/github-readme-activity-graph)
