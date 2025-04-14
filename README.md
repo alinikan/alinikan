@@ -96,9 +96,3 @@ Aspiring Software Developer with a BSc in Computer Science from SFU 🎓 and mul
 ### 💬 Dev Quote of the Day
 
 ![Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dracula)
-
----
-
-### 🌌 Contribution Graph
-
-![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=alinikan&theme=dracula)
