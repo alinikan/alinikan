@@ -99,6 +99,6 @@ Aspiring Software Developer with a BSc in Computer Science from SFU 🎓 and mul
 
 ---
 
-### 🌌 Contribution Galaxy
+### 🌌 Contribution Graph
 
-[![GitHub Activity Graph](https://github-readme-activity-graph.cyclic.app/graph?username=alinikan&theme=dracula)](https://github.com/ashutosh00710/github-readme-activity-graph)
+![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=alinikan&theme=dracula)
