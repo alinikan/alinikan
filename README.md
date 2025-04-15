@@ -3,9 +3,9 @@
 <h1 align="center">Hi 👋, I'm Ali Nikan</h1>
 <h3 align="center">Passionate about coding and making new projects!</h3>
 
-<!-- RETRO GAMER -->
+<!-- AI CORE BOOT-UP -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&duration=4500&pause=1200&color=FF69B4&center=true&vCenter=true&multiline=true&width=800&height=120&lines=>>+INSERT+COIN;>>+LOADING+ALI+NIKAN...;>>+INITIATE+PROJECT+MODE;>>+MISSION:+CODE+%7C+PLAY+%7C+REPEAT" />
+  <img src="https://readme-typing-svg.demolab.com?font=Roboto+Mono&duration=3500&pause=900&color=F78C6B&center=true&vCenter=true&multiline=true&width=800&height=120&lines=Booting+Core+Modules...;Loading+Profile:+Ali+Nikan;Cognition+Protocol:+ACTIVE;System+Stable+%7C+Ready+to+innovate." />
 </p>
 
 <p align="center">
