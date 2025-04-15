@@ -25,6 +25,10 @@ Aspiring Software Developer with a BSc in Computer Science from SFU 🎓 and mul
 
 ---
 
+<p align="center">
+  <img alt="Cool Matrix Coding" width="400" src="https://i.gifer.com/5TMy.gif">
+</p>
+
 ### 🚀 Featured Projects
 
 - 🔍 **[Steam Game Recommender & Popularity Predictor](https://github.com/alinikan/GameRecommender.git)**  
