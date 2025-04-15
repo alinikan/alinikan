@@ -87,7 +87,7 @@ Aspiring Software Developer with a BSc in Computer Science from SFU 🎓 and mul
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=alinikan&hide=Jupyter%20Notebook&show_icons=true&theme=dracula)
 
-[![GitHub Streak](https://streak-stats.github.io/demo/?user=alinikan&theme=dracula)](https://git.io/streak-stats)
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=alinikan&theme=dracula)](https://git.io/streak-stats)
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=alinikan&theme=dracula&margin-w=15)](https://github.com/ryo-ma/github-profile-trophy)
 
