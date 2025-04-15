@@ -3,11 +3,6 @@
 <h1 align="center">Hi 👋, I'm Ali Nikan</h1>
 <h3 align="center">Passionate about coding and making new projects!</h3>
 
-<!-- AI CORE BOOT-UP -->
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Roboto+Mono&duration=3500&pause=900&color=F78C6B&center=true&vCenter=true&multiline=true&width=800&height=120&lines=Booting+Core+Modules...;Loading+Profile:+Ali+Nikan;Cognition+Protocol:+ACTIVE;System+Stable+%7C+Ready+to+innovate." />
-</p>
-
 <p align="center">
   <img alt="Coding" width="400" src="https://i.pinimg.com/originals/e4/26/70/e426702edf874b181aced1e2fa5c6cde.gif">
 </p>
