@@ -19,7 +19,7 @@ Aspiring Software Developer with a BSc in Computer Science from SFU 🎓 and mul
 
 - 🌱 Currently learning: **Machine Learning & Unreal Engine**
 - 💬 Ask me about: **Data Analysis, Artificial Intelligence, C/C++, Game Dev**
-- 🧑‍💼 Day job: Leading a 25+ person team at Nespresso (yes, coffee & code ☕👨‍💻)
+- 🧑‍💼 Day job: Specialist at **Apple** 🍏
 - 📫 Reach me at: **ali.nikan79@gmail.com**
 - ⚡ Fun fact: I’m a huge fan of story-driven games & sci-fi movies (The Last of Us, Interstellar—perfection).
 
