@@ -19,7 +19,11 @@ Aspiring Software Developer with a BSc in Computer Science from SFU 🎓 and mul
 
 - 🌱 Currently learning: **Machine Learning & Unreal Engine**
 - 💬 Ask me about: **Data Analysis, Artificial Intelligence, C/C++, Game Dev**
-- 🧑‍💼 Day job: Specialist at **Apple** <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_white.svg/1024px-Apple_logo_white.svg.png" alt="Apple" width="15"/>
+- 🧑‍💼 Day job: Specialist at Apple <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/apple/ffffff">
+    <source media="(prefers-color-scheme: light)" srcset="https://cdn.simpleicons.org/apple/000000">
+    <img alt="Apple" src="https://cdn.simpleicons.org/apple/000000" width="15"/>
+  </picture>
 - 📫 Reach me at: **ali.nikan79@gmail.com**
 - ⚡ Fun fact: I’m a huge fan of story-driven games & sci-fi movies (The Last of Us, Interstellar—perfection).
 
