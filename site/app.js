@@ -150,7 +150,7 @@
   }
   void loadGuestbook();
 
-  async function loadMusic(){try{const res=await fetch("./now-playing.json",{cache:"no-store"});if(!res.ok)return;const data=await res.json();if(!data.enabled||!data.track||!data.artist)return;
+  async function loadMusic(){try{const res=await fetch("https://raw.githubusercontent.com/alinikan/alinikan/main/site/now-playing.json",{cache:"no-store"});if(!res.ok)return;const data=await res.json();if(!data.enabled||!data.track||!data.artist)return;
       $("#music-title").textContent=data.track;const meta=$("#music-meta");meta.replaceChildren();meta.append(document.createTextNode((data.nowPlaying&&data.updatedAt&&Date.now()-Date.parse(data.updatedAt)<10*60*1000?"Now playing":"Recently played")+" · "+data.artist));
       if(data.url&&/^https:\/\/www\.last\.fm\/music\//.test(data.url)){meta.append(document.createTextNode(" · "));meta.append(external(data.url,"Listen ↗"));}
     }catch(_){}}
