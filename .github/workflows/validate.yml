@@ -39,9 +39,13 @@ jobs:
           for f in svgs:
               ET.parse(f)
           readme = Path('README.md').read_text(encoding='utf-8')
-          for name in ['Pac-Man','Galaga','Breakout','Snake','Tetris','Bomberman','Minesweeper','Puzzle Bobble']:
+          for name in ['Pac-Man','Pockit','LexiLoop','Autopilot','Recomp']:
               assert name in readme, f'Missing arcade game: {name}'
           assert 'github-readme-stats.vercel.app' not in readme, 'Broken old stats endpoint still referenced'
+          for forbidden in ['Project constellation','Developer RPG','developer XP','Classified: Area 79','Choose from all eight arcade modes','Mission telemetry','Bonus features and interactive portal','GitHub Readme Stats Action','Telemetry maintenance','Activity intel','Six project systems']:
+              assert forbidden.lower() not in readme.lower(), f'Unwanted profile section remains: {forbidden}'
+          assert readme.count('pacman-contribution-graph.svg') >= 1
+          assert '232639433-cb0aea21-66f0-4508-a771-85e2089c5a87.gif' in readme
           for forbidden in ['OpenAI API','Last.fm','Spotify','now-playing','api/ask','alios-ai-endpoint']:
               assert forbidden.lower() not in readme.lower(), f'Removed third-party dependency still in README: {forbidden}'
           for removed in ['site/api/ask.js','site/now-playing.json','scripts/update-lastfm.mjs','.github/workflows/now-playing.yml','generated/now-playing.svg']:
