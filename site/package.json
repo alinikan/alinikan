@@ -1,0 +1,13 @@
+{
+  "name": "ali-os-companion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static ALI.OS portal — Playwright is used for optional development tests only",
+  "scripts": {
+    "start": "python3 -m http.server 4173 --bind 127.0.0.1",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.0"
+  }
+}
