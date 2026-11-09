@@ -1,6 +1,9 @@
 name: Refresh ALI.OS telemetry
 
 on:
+  push:
+    branches: [feature/ali-os-sci-fi-arcade-redesign]
+    paths: ['.github/workflows/telemetry.yml']
   workflow_dispatch:
   schedule:
     - cron: "17 7 * * 2,5"
