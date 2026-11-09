@@ -15,12 +15,12 @@ This entire redesign is in draft pull request #1, branch `feature/ali-os-sci-fi-
 | 03 | Repository galaxy | README overview `assets/galaxy.svg`; clickable planets in `site/` | Built; interactive version requires site hosting |
 | 04 | Contribution arcade | Pac-Man main; eight options; local preview SVGs; generator workflow | Built; real data requires first Action run after merge |
 | 05 | Hidden easter egg | GitHub-native nested details and riddle | Built |
-| 06 | Mission Control | Consolidated metrics, activity, what's-new and status | Built |
+| 06 | Mission Control | Consolidated statistics, actual public-build signals and playful XP | Built; real data requires first Action run |
 | 07 | Featured applications | Pockit, LexiLoop, Autopilot, Recomp; AI and games; real images | Built |
-| 08 | Animated skill tree | Static SVG of real technologies; RPG styling with animation-ready component design | Built visually; individual tree-node motion not claimed |
+| 08 | Animated skill tree | SVG with softly pulsing nodes and travelling signals; reduced-motion fallback | Built |
 | 09 | Dark/light support | SVG readability, GitHub picture sources for arcade, styled companion | Built, requires visual check in GitHub themes |
 | 10 | Developer timeline | Education, ML, games and modern application arc | Built |
-| 11 | What's New panel | Links to latest meaningful public projects; avoids fake auto-news | Built |
+| 11 | What's New panel | Curated project links plus dynamically generated most-recent public push dates | Built; live signals require first Action run |
 | 12 | Reliable GitHub Stats | `telemetry.yml`; pinned maintained generator; local fallbacks | Configured; real stats require first Action run |
 | 13 | Achievements | `assets/achievements.svg` with evidenced milestones | Built |
 | 14 | Activity visualization | Native activity links + arcade + 3D skyline workflow | Configured; real 3D data requires first run |
@@ -54,7 +54,7 @@ This entire redesign is in draft pull request #1, branch `feature/ali-os-sci-fi-
 ### A. GitHub stats / arcade / 3D
 
 - Ensure GitHub Actions runs are allowed and workflow token can write repository contents. Since the workflows commit only files in this profile repo, keep permissions as narrow as possible.
-- Run **Refresh ALI.OS telemetry**, verify `generated/stats.svg` and `generated/languages.svg` no longer contain placeholder content.
+- Run **Refresh ALI.OS public mission signals**, verify `generated/mission.svg` and `generated/developer-xp.svg` contain real GitHub public-repository data. XP is 100 per public original repo plus 30 per public star, not a skill rating.\n- Run **Refresh ALI.OS telemetry**, verify `generated/stats.svg` and `generated/languages.svg` no longer contain placeholder content.
 - Run **ALI.OS arcade contribution games**, verify all **16** light/dark SVG outputs exist in `generated/arcade/` and Pac-Man is the leading profile graphic.
 - Run **Refresh 3D contribution skyline**, verify the generated file `profile-3d-contrib/profile-night-rainbow.svg` has replaced the marked preview.
 - Check GitHub Actions logs for upstream API or token errors, rather than assuming success.
@@ -70,7 +70,7 @@ This entire redesign is in draft pull request #1, branch `feature/ali-os-sci-fi-
 
 - **AI model:** never commit `OPENAI_API_KEY`; configure a protected secret in a server-side deployment, provider spend caps, and platform-wide abuse throttling; then set a same-origin API endpoint in the site meta tag. Until then the local project guide works without AI.
 - **Listening feed:** optional only. Configure public `LASTFM_USERNAME` as a repo variable and `LASTFM_API_KEY` as a secret. The workflow generates only the opted-in public data. See privacy/opt-out instructions in [site/README.md](../site/README.md).
-- **Guestbook:** repository Issues are already enabled. After merge, create issue labels `guestbook-pending` and `guestbook-approved` if missing; use the prepared Issue form. Only approved messages appear in the companion site. All submitted GitHub issues are public before approval, so the form warns visitors not to share private data.
+- **Guestbook:** repository Issues are already enabled. After merge, run the staged **Prepare guestbook labels** workflow to create `guestbook-pending` and `guestbook-approved` if missing; use the prepared Issue form. Only approved messages appear in the companion site. All submitted GitHub issues are public before approval, so the form warns visitors not to share private data.
 - Neither a secret, listening account, nor AI connection is required to display the README itself.
 
 ## Security and quality
