@@ -49,7 +49,7 @@ jobs:
           for link in refs:
               resolved = root / link.removeprefix('./')
               assert resolved.is_file(), f'Broken local README link: {link}'
-          for name in ['site/index.html','site/styles.css','site/app.js','site/api/ask.js','site/now-playing.json','scripts/update-mission.mjs','generated/mission.svg','generated/developer-xp.svg','.github/ISSUE_TEMPLATE/guestbook.yml','docs/INTEGRATIONS.md']:
+          for name in ['site/index.html','site/styles.css','site/app.js','site/api/ask.js','site/now-playing.json','scripts/update-mission.mjs','generated/mission.svg','generated/developer-xp.svg','generated/now-playing.svg','.github/ISSUE_TEMPLATE/guestbook.yml','docs/INTEGRATIONS.md']:
               assert Path(name).is_file(), f'Missing expected file: {name}'
           print(f'Validated {len(svgs)} SVGs, {len(refs)} local links, and required features')
           PY

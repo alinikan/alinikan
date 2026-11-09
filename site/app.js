@@ -40,7 +40,13 @@
     grid.replaceChildren();
     for(const p of filtered){
       const card=document.createElement("article");card.className="project-card";card.id="project-"+p.id;card.tabIndex=-1;
-      if(p.image){const thumb=document.createElement("img");thumb.src=p.image;thumb.className="project-thumb";thumb.loading="lazy";thumb.alt="Screenshot or official artwork from the "+p.name+" repository";thumb.decoding="async";card.append(thumb);}card.append(addText("span",p.label,"category"),addText("h3",p.name),addText("p",p.description));
+      const visual=document.createElement("div");visual.className="project-visual";visual.style.setProperty("--project-color",p.color);
+      visual.append(addText("span",p.symbol||"✦","project-visual-symbol"));
+      if(p.image){const thumb=document.createElement("img");thumb.src=p.image;thumb.className="project-thumb";thumb.loading="lazy";thumb.alt="Screenshot or official artwork from the "+p.name+" repository";thumb.decoding="async";
+        thumb.addEventListener("load",()=>{if(thumb.naturalWidth>0)visual.classList.add("is-loaded");});
+        thumb.addEventListener("error",()=>thumb.remove());
+        visual.append(thumb);}
+      card.append(visual,addText("span",p.label,"category"),addText("h3",p.name),addText("p",p.description));
       const tags=document.createElement("div");tags.className="tags";for(const t of p.tech)tags.append(addText("span",t,"tag"));card.append(tags);
       const actions=document.createElement("div");actions.className="project-actions";actions.append(external(p.repo,"Source ↗"));if(p.demo)actions.append(external(p.demo,"Live demo ↗"));card.append(actions);grid.append(card);
     }

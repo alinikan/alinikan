@@ -1,19 +1,14 @@
-<!-- ALI.OS · Self-hosted profile assets. README motion uses SVG, not embedded JS. -->
-<div align="center">
+<!-- ALI.OS — GitHub-safe SVG hero, no inline JavaScript -->
+<p align="center"><img src="./assets/hero.svg" width="100%" alt="ALI.OS · animated sci-fi command center of Ali Nikan"></p>
 
-![ALI.OS — cinematic software developer banner](./assets/hero.svg)
-
-### Software developer · AI builder · game enthusiast
-
-**Building useful apps, intelligent tools, and playful digital experiences.**
-
-[**Explore my projects**](#-featured-builds) · [**Developer RPG**](#-developer-rpg) · [**The arcade**](#-the-arcade) · [**Contact**](#-communications)
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0D1117?style=flat-square&logo=linkedin&logoColor=67E8F9)](https://www.linkedin.com/in/alinikan79/)
-[![Email](https://img.shields.io/badge/Email-Say_hello-0D1117?style=flat-square&logo=gmail&logoColor=C4B5FD)](mailto:ali.nikan79@gmail.com)
-[![Portfolio](https://img.shields.io/badge/Source-Code-Explore-0D1117?style=flat-square&logo=github&logoColor=white)](https://github.com/alinikan?tab=repositories)
-
-</div>
+<h3 align="center">Software Developer · AI Builder · Game Enthusiast</h3>
+<p align="center"><strong>Building useful apps, intelligent tools, and playful digital experiences.</strong></p>
+<p align="center"><a href="#-featured-builds">Explore projects</a> · <a href="#-developer-rpg">Developer RPG</a> · <a href="#-the-arcade">Arcade</a> · <a href="#-communications">Contact</a></p>
+<p align="center">
+<a href="https://www.linkedin.com/in/alinikan79/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0D1117?style=flat-square&amp;logo=linkedin&amp;logoColor=67E8F9" alt="Connect on LinkedIn"></a>
+<a href="mailto:ali.nikan79@gmail.com"><img src="https://img.shields.io/badge/Email-Say_Hello-0D1117?style=flat-square&amp;logo=gmail&amp;logoColor=C4B5FD" alt="Send email"></a>
+<a href="https://github.com/alinikan?tab=repositories"><img src="https://img.shields.io/badge/GitHub-Projects-0D1117?style=flat-square&amp;logo=github&amp;logoColor=white" alt="Explore GitHub projects"></a>
+</p>
 
 ---
 
@@ -181,24 +176,24 @@ No invented proficiency percentages: this is an inventory of technologies used o
 *Self-hosted cards, generated through GitHub Actions and committed to this repository — not fetched on every view from a fragile public stats server.*
 
 <div align="center">
-<img src="./generated/stats.svg" alt="GitHub activity and stats; replaced automatically after the first workflow run" width="49%" />
-<img src="./generated/languages.svg" alt="GitHub repository language breakdown; replaced automatically after the first workflow run" width="49%" />
+<img src="./generated/stats.svg" alt="Locally generated GitHub statistics; automatically refreshed by GitHub Actions" width="49%" />
+<img src="./generated/languages.svg" alt="Locally generated GitHub repository language breakdown" width="49%" />
 </div>
 
 ### 🎯 Recent build signals & developer XP
 
 <div align="center">
-<img src="./generated/mission.svg" alt="Recent public repositories, updated by a GitHub Action after activation" width="49%" />
-<img src="./generated/developer-xp.svg" alt="Transparent just-for-fun public GitHub repository XP meter, updated after activation" width="49%" />
+<img src="./generated/mission.svg" alt="Recent public repositories updated by GitHub Actions" width="49%" />
+<img src="./generated/developer-xp.svg" alt="Transparent just-for-fun developer XP meter derived from public repositories" width="49%" />
 </div>
 
-The XP meter is playful: **100 XP per public original repository + 30 XP per public repository star**, with 500 XP per level. It's a game mechanic, **not a measurement of engineering skill**. Recent builds are selected by actual public repository push dates, not claimed to be my personal priorities. These preview images are replaced by the [public mission workflow](./.github/workflows/mission.yml) after its first successful run.
+The XP meter is playful: **100 XP per public original repository + 30 XP per public repository star**, with 500 XP per level. It's a game mechanic, **not a measurement of engineering skill**. Recent builds are selected by actual public repository push dates, not claimed to be my personal priorities. These graphics now use real public GitHub data and are maintained by the [public mission workflow](./.github/workflows/mission.yml).
 
 
 <details>
 <summary><b>⚙️ Telemetry maintenance and refresh</b></summary>
 
-This section uses the maintained [GitHub Readme Stats Action](https://github.com/stats-organization/github-readme-stats-action). The static fallback cards show until the [telemetry workflow](./.github/workflows/telemetry.yml) succeeds. GitHub Actions refreshes the saved SVGs on schedule, and workflow dispatch allows a manual run. The data only covers what the token permits. GitHub language data is based on repository code, not an assessment of programming ability.
+This section uses the maintained [GitHub Readme Stats Action](https://github.com/stats-organization/github-readme-stats-action). Both cards have been generated successfully from live GitHub data by the [telemetry workflow](./.github/workflows/telemetry.yml). Last-known-good images stay visible if a later refresh fails. GitHub Actions refreshes the saved SVGs on schedule, and workflow dispatch allows a manual run. The data only covers what the token permits. GitHub language data is based on repository code, not an assessment of programming ability.
 
 [Open the repository's Actions tab](https://github.com/alinikan/alinikan/actions)
 
@@ -219,14 +214,14 @@ This section uses the maintained [GitHub Readme Stats Action](https://github.com
 
 ## 👾 The arcade
 
-**Pac-Man is the main contribution game.** It is shown below using dark/light theme-aware SVGs. This draft includes clearly labelled preview art; the [arcade workflow](./.github/workflows/arcade.yml) replaces it with **actual contribution-based animation** after its first successful run. The other seven games have their own expandable launch links, including the main Pac-Man mode for quick access.
+**Pac-Man is the main contribution game.** Real animated graphs from public GitHub contribution data have been generated for all eight games and are refreshed by the [arcade workflow](./.github/workflows/arcade.yml). The other seven games have their own expandable launch links, including the main Pac-Man mode for quick access.
 
 <div align="center">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./generated/arcade/pacman-contribution-graph-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./generated/arcade/pacman-contribution-graph.svg">
-  <img src="./generated/arcade/pacman-contribution-graph.svg" alt="ALI.OS Pac-Man arcade preview; automatically replaced with a real animated contributions graph once the workflow runs" width="100%">
+  <img src="./generated/arcade/pacman-contribution-graph.svg" alt="Animated Pac-Man contribution graph generated from Ali Nikan's public GitHub activity" width="100%">
 </picture>
 
 </div>
@@ -245,16 +240,16 @@ This section uses the maintained [GitHub Readme Stats Action](https://github.com
 | 💠 Minesweeper | [Launch Minesweeper](./generated/arcade/minesweeper-contribution-graph-dark.svg) |
 | 🫧 Puzzle Bobble | [Launch Puzzle Bobble](./generated/arcade/puzzle-bobble-contribution-graph-dark.svg) |
 
-These currently display branded **activation previews**, not fictional GitHub contribution data. When the workflow runs, it replaces the assets with real contribution visualizations.
+These assets now use real contribution data. If a future update fails, the last successfully generated version remains available.
 
 </details>
 
 <details>
 <summary><b>🧊 3D contributions — an alternative camera angle</b></summary>
 
-![3D contribution skyline activation preview](./profile-3d-contrib/profile-night-rainbow.svg)
+![3D contribution skyline generated from public GitHub activity](./profile-3d-contrib/profile-night-rainbow.svg)
 
-The [3D contribution workflow](./.github/workflows/profile-3d.yml) generates a genuine isometric skyline. Until its first successful run, the image is explicitly labelled a preview.
+The [3D contribution workflow](./.github/workflows/profile-3d.yml) successfully generated this real isometric contribution skyline and can refresh it on schedule.
 
 </details>
 
@@ -293,7 +288,7 @@ QUESTION: What am I?
 
 ## 🔭 Experimental modules and bonus features
 
-The README stays fast and readable. Advanced interactions live in a **separate, fully coded companion portal** in [`site/`](./site/README.md); it isn't publicly deployed yet.
+The README stays fast and readable. Advanced interactions live in a separate, **working and browser-tested companion portal** in [`site/`](./site/README.md). The portal is ready to deploy, but hasn't been published yet. [View the setup and launch checklist](./docs/LAUNCH_CHECKLIST.md).
 
 <details>
 <summary><b>🤖 AI project concierge / ask the archive</b></summary>
@@ -314,6 +309,8 @@ The [theme workflow](./.github/workflows/seasonal.yml) is configured to rotate t
 <details>
 <summary><b>🎧 Now Playing / soundtrack station</b></summary>
 
+<p align="center"><img src="./generated/now-playing.svg" alt="Opt-in public soundtrack station showing connection status" width="85%"></p>
+
 The optional [Last.fm workflow](./.github/workflows/now-playing.yml) and [public display JSON](./site/now-playing.json) are ready. **No listening account is connected**, and no personal listening activity is published by default. With an opt-in Last.fm username and API key stored as a repository secret, the companion portal can display a real recent track (and distinguish current playback from older activity).
 
 </details>
@@ -321,7 +318,7 @@ The optional [Last.fm workflow](./.github/workflows/now-playing.yml) and [public
 <details>
 <summary><b>📬 Visitor guestbook / transmissions</b></summary>
 
-A [moderated GitHub Issue form](./.github/ISSUE_TEMPLATE/guestbook.yml) and approved-entry reader are prepared. Visitors may submit public messages via GitHub after the PR merges; messages only display in the companion portal after the owner adds `guestbook-approved`. Nothing is automatically approved.
+[Leave a visitor transmission](https://github.com/alinikan/alinikan/issues/new?template=guestbook.yml) · A [moderated GitHub Issue form](./.github/ISSUE_TEMPLATE/guestbook.yml) and approved-entry reader are prepared. Visitors may submit public messages via GitHub after the PR merges; messages only display in the companion portal after the owner adds `guestbook-approved`. Nothing is automatically approved.
 
 </details>
 

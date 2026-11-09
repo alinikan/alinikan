@@ -41,7 +41,12 @@ module.exports = async function handler(req, res) {
       method:"POST",
       signal:abort,
       headers:{"Authorization":"Bearer "+process.env.OPENAI_API_KEY,"Content-Type":"application/json"},
-      body:JSON.stringify({model:process.env.ALIOS_OPENAI_MODEL||"gpt-4.1-mini",store:false,max_output_tokens:330,input:[{role:"system",content:system},{role:"user",content:question}]})
+      body:JSON.stringify({
+        model:process.env.ALIOS_OPENAI_MODEL||"gpt-6-luna",
+        ...( !process.env.ALIOS_OPENAI_MODEL || ["gpt-6-luna","gpt-6.1-terra"].includes(process.env.ALIOS_OPENAI_MODEL) ? {reasoning:{effort:"none"}} : {} ),
+        store:false,max_output_tokens:400,
+        input:[{role:"system",content:system},{role:"user",content:question}]
+      })
     });
     if(!response.ok) return res.status(502).json({error:"Concierge model request failed"});
     const data=await response.json();
