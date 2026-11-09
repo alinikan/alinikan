@@ -1,7 +1,7 @@
 import { writeFile, mkdir } from 'node:fs/promises';
 
 const destination = new URL('../site/now-playing.json', import.meta.url);
-const disable = () => ({ enabled: false, track: null, artist: null, nowPlaying: false, updatedAt: new Date().toISOString(), url: null });
+const disable = () => ({ enabled: false, track: null, artist: null, nowPlaying: false, updatedAt: null, url: null });
 const username = (process.env.LASTFM_USERNAME || '').trim();
 const apiKey = (process.env.LASTFM_API_KEY || '').trim();
 
