@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1026">
+  <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39;; style-src &#39;self&#39;; connect-src &#39;self&#39; https://api.github.com; img-src &#39;self&#39; data: https://raw.githubusercontent.com; object-src &#39;none&#39;; base-uri &#39;none&#39;">
+  <meta name="description" content="ALI.OS — explore Ali Nikan's software projects, AI experiments, creative games and interactive developer universe.">
+  <meta property="og:title" content="ALI.OS — Developer Universe">
+  <meta property="og:description" content="A cinematic, gaming-inspired developer portfolio by Ali Nikan.">
+  <title>ALI.OS · Developer Universe</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body data-theme="nebula">
+  <a class="skip" href="#main">Skip to content</a>
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="layout">
+    <header class="topbar panel">
+      <a href="#home" class="brand" aria-label="ALI.OS home"><span class="brand-mark">A<span class="brand-dot">.</span></span><span>ALI<span class="accent">.OS</span></span></a>
+      <div class="status"><span class="beacon" aria-hidden="true"></span> SYSTEM ONLINE <span id="utc-clock" aria-label="Current UTC time"></span></div>
+      <button type="button" class="mobile-nav-btn" id="menu-toggle" aria-controls="main-nav" aria-expanded="false">☰ Menu</button>
+      <nav id="main-nav" class="nav" aria-label="Main navigation">
+        <a href="#projects">PROJECTS</a>
+        <a href="#concierge">PROJECT GUIDE</a>
+        <a href="#arcade">ARCADE</a>
+        <a href="#guestbook">GUESTBOOK</a>
+        <a href="#settings">THEMES</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="home" class="hero panel" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">WELCOME TO THE DEVELOPER UNIVERSE <span class="cursor" aria-hidden="true">█</span></p>
+          <h1 id="hero-title">Build. Learn.<br><span class="gradient-text">Play. Repeat.</span></h1>
+          <p class="lead">I'm <strong>Ali Nikan</strong> — a software developer building useful tools, intelligent applications, and experiences with a little bit of game magic.</p>
+          <div class="actions">
+            <a class="primary-action" href="#projects">Explore the universe <span aria-hidden="true">↗</span></a>
+            <a class="secondary-action" href="https://github.com/alinikan" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
+          </div>
+          <p class="small muted">SFU Computer Science · React / TypeScript / Python · AI / Game Dev</p>
+        </div>
+        <div class="orb-wrap" aria-hidden="true">
+          <div class="orb-glow"></div><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+          <div class="planet"><span>A</span></div><div class="satellite"></div>
+          <p class="orbit-label">MISSION: CREATE SOMETHING COOL</p>
+        </div>
+      </section>
+
+      <section aria-label="Mission indicators" class="telemetry">
+        <div class="panel signal"><span class="eyebrow">BUILD STATUS</span><strong>CREATING</strong><small>Curiosity never idles</small></div>
+        <div class="panel signal"><span class="eyebrow">MAIN SPECIALTIES</span><strong>03</strong><small>Web · AI · Games</small></div>
+        <div class="panel signal"><span class="eyebrow">FEATURED BUILDS</span><strong>08</strong><small>Real public repositories</small></div>
+        <div class="panel signal"><span class="eyebrow">CURRENT SECTOR</span><strong>ALI.OS</strong><small>Made for explorers</small></div>
+      </section>
+
+      <section id="projects" class="section panel" aria-labelledby="projects-title">
+        <div class="section-head"><div><p class="eyebrow">01 // CONSTELLATION</p><h2 id="projects-title">Explore my builds</h2></div><span class="section-note">SELECT A PLANET OR SEARCH</span></div>
+        <p class="muted">Each planet is a project. Select one to jump to its card. Filter by area or search by technology and idea.</p>
+        <div class="star-map" id="star-map" role="group" aria-label="Interactive project constellation">
+          <svg class="links" viewBox="0 0 900 295" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M450 146 L125 65 M450 146 L330 58 M450 146 L705 67 M450 146 L760 210 M450 146 L543 234 M450 146 L176 235 M450 146 L450 262" fill="none" stroke="#8879d4" stroke-dasharray="4 8" stroke-width="1.3" opacity=".7"/>
+          </svg>
+          <span class="map-core" aria-hidden="true">ALI.OS</span>
+          <div id="planet-buttons"></div>
+        </div>
+        <form class="project-filter" role="search" id="search-form">
+          <label for="project-search">Search projects</label>
+          <input id="project-search" name="q" type="search" placeholder="Try React, machine learning, games…" autocomplete="off">
+          <label class="visually-hidden" for="project-category">Category</label>
+          <select id="project-category" name="category" aria-label="Filter project category">
+            <option value="all">All sectors</option><option value="web">Web apps</option><option value="ai">AI / Data</option><option value="game">Games</option>
+          </select>
+        </form>
+        <div class="project-grid" id="project-grid" aria-live="polite"></div>
+        <p class="muted small">Want the complete archive? <a href="https://github.com/alinikan?tab=repositories" target="_blank" rel="noopener noreferrer">Browse every public repository ↗</a></p>
+      </section>
+
+      <section id="concierge" class="section split" aria-labelledby="concierge-title">
+        <div class="panel aside">
+          <p class="eyebrow">02 // PROJECT NAVIGATOR</p>
+          <h2 id="concierge-title">Ask the archive</h2>
+          <p>Ask which projects use a technology, what a project does, or where to find the source code.</p>
+          <div class="tagline"><span aria-hidden="true">◇</span> Built-in project guide · no account needed</div>
+          <p class="fineprint">Searches a curated index of Ali's public projects directly in your browser. <strong>No paid AI service, API key, account, or external message processing</strong> is required.</p>
+          <div class="suggestions" aria-label="Suggested questions">
+            <button type="button" data-question="Which projects use TypeScript?">TypeScript projects</button>
+            <button type="button" data-question="What AI projects have you built?">AI experiments</button>
+            <button type="button" data-question="Which games can I play?">Playable games</button>
+          </div>
+        </div>
+        <div class="panel chat">
+          <div class="chat-top"><span class="beacon" aria-hidden="true"></span> ALI.OS / KNOWLEDGE TERMINAL <span class="chip">PUBLIC REPOS</span></div>
+          <div class="chat-log" id="chat-log" role="log" aria-live="polite" aria-relevant="additions">
+            <div class="bubble bot">Welcome, explorer. I can help you discover Ali's projects. Try asking about web apps, AI, games, or a specific technology.</div>
+          </div>
+          <form id="chat-form" class="chat-input">
+            <label for="chat-question" class="visually-hidden">Question about projects</label>
+            <input id="chat-question" required maxlength="450" placeholder="Ask about a project or technology…" autocomplete="off">
+            <button type="submit" aria-label="Send question">SEND ↗</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="arcade" class="section panel" aria-labelledby="arcade-title">
+        <div class="section-head"><div><p class="eyebrow">03 // BONUS LEVEL</p><h2 id="arcade-title">The arcade</h2></div><span class="section-note">EXPLORER MINI-GAME</span></div>
+        <p class="muted">Catch stars, dodge obstacles, and see how many points you can score in 30 seconds.</p>
+        <div class="game-layout">
+          <div class="game-board">
+            <canvas id="game" width="760" height="330" role="img" aria-label="Starfall game; move your ship with arrow keys, A and D, or pointer to collect blue stars and avoid red hazards."></canvas>
+            <div class="game-legend"><span>★ Collect cyan stars</span><span>◆ Avoid red hazards</span></div>
+          </div>
+          <div class="game-panel">
+            <div class="game-score"><span>SCORE</span><strong id="score">0</strong></div>
+            <div class="game-score"><span>BEST ON THIS DEVICE</span><strong id="best">0</strong></div>
+            <div class="game-score"><span>TIME</span><strong id="time-left">30s</strong></div>
+            <button class="primary-action" id="start-game" type="button">Start mission</button>
+            <button class="secondary-action" id="pause-game" type="button" disabled>Pause</button>
+            <p id="game-status" class="muted small" role="status">Use ← →, A / D, or move your pointer/finger over the board.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="guestbook" class="section split" aria-labelledby="guestbook-title">
+        <div class="panel aside"><p class="eyebrow">04 // OPEN COMMS</p><h2 id="guestbook-title">Visitor transmissions</h2>
+          <p>Leave a friendly note using a GitHub Issue form. Messages are shown after approval, so this guestbook remains moderated.</p>
+          <a class="primary-action" href="https://github.com/alinikan/alinikan/issues/new?template=guestbook.yml" target="_blank" rel="noopener noreferrer">Leave a message on GitHub ↗</a>
+          <p class="fineprint">Requires a GitHub account. The issue template is activated after the feature branch merges. No message is stored directly on this website.</p>
+        </div>
+        <div class="panel guestbook-list"><h3>Approved messages</h3><div id="guestbook-entries" aria-live="polite"><p class="muted">Checking public, approved transmissions…</p></div></div>
+      </section>
+
+      <section id="settings" class="section panel" aria-labelledby="settings-title">
+        <div class="section-head"><div><p class="eyebrow">05 // CUSTOMIZE SYSTEM</p><h2 id="settings-title">Choose your universe</h2></div></div>
+        <p class="muted">Theme preferences are saved only in your browser. The GitHub README banner has its own monthly automation.</p>
+        <fieldset class="theme-switch"><legend class="visually-hidden">Choose visual theme</legend>
+          <button class="theme-button" type="button" data-select-theme="nebula" aria-pressed="true">✦ NEBULA <small>Deep violet · cyan</small></button>
+          <button class="theme-button" type="button" data-select-theme="winter" aria-pressed="false">❄ WINTER <small>Ice blue · aurora</small></button>
+          <button class="theme-button" type="button" data-select-theme="arcade" aria-pressed="false">◆ ARCADE <small>Hot pink · electric blue</small></button>
+        </fieldset>
+      </section>
+    </main>
+
+    <footer class="footer panel"><span class="brand">ALI<span class="accent">.OS</span></span><span>END OF TRANSMISSION // THANKS FOR EXPLORING</span><a href="mailto:ali.nikan79@gmail.com">CONTACT ↗</a></footer>
+  </div>
+</body>
+</html>
