@@ -28,6 +28,7 @@ jobs:
           node --check site/app.js
           node --check site/api/ask.js
           node --check scripts/update-lastfm.mjs
+          node --check scripts/update-mission.mjs
       - name: Validate every SVG, local README link, and feature inventory
         run: |
           python3 - <<'PY'
@@ -48,7 +49,7 @@ jobs:
           for link in refs:
               resolved = root / link.removeprefix('./')
               assert resolved.is_file(), f'Broken local README link: {link}'
-          for name in ['site/index.html','site/styles.css','site/app.js','site/api/ask.js','site/now-playing.json','.github/ISSUE_TEMPLATE/guestbook.yml','docs/INTEGRATIONS.md']:
+          for name in ['site/index.html','site/styles.css','site/app.js','site/api/ask.js','site/now-playing.json','scripts/update-mission.mjs','generated/mission.svg','generated/developer-xp.svg','.github/ISSUE_TEMPLATE/guestbook.yml','docs/INTEGRATIONS.md']:
               assert Path(name).is_file(), f'Missing expected file: {name}'
           print(f'Validated {len(svgs)} SVGs, {len(refs)} local links, and required features')
           PY
