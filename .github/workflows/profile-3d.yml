@@ -1,9 +1,6 @@
 name: Refresh 3D contribution skyline
 
 on:
-  push:
-    branches: [feature/ali-os-sci-fi-arcade-redesign]
-    paths: ['.github/workflows/profile-3d.yml']
   workflow_dispatch:
   schedule:
     - cron: "23 9 * * 6"

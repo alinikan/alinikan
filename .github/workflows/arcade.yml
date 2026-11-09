@@ -1,9 +1,6 @@
 name: ALI.OS arcade contribution games
 
 on:
-  push:
-    branches: [feature/ali-os-sci-fi-arcade-redesign]
-    paths: ['.github/workflows/arcade.yml']
   workflow_dispatch:
   schedule:
     - cron: "39 8 * * 3"

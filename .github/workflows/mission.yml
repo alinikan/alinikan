@@ -1,9 +1,6 @@
 name: Refresh ALI.OS public mission signals
 
 on:
-  push:
-    branches: [feature/ali-os-sci-fi-arcade-redesign]
-    paths: ['.github/workflows/mission.yml']
   workflow_dispatch:
   schedule:
     - cron: "31 9 * * 1,5"
