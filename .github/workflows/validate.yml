@@ -29,6 +29,32 @@ jobs:
           node --check site/api/ask.js
           node --check scripts/update-lastfm.mjs
           node --check scripts/update-mission.mjs
+      - name: Test opt-out behavior of the soundtrack module
+        env:
+          LASTFM_USERNAME: ""
+          LASTFM_API_KEY: ""
+        run: |
+          node scripts/update-lastfm.mjs
+          python3 - <<'PY'
+          import json
+          import xml.etree.ElementTree as ET
+          record = json.load(open('site/now-playing.json'))
+          assert record.get('enabled') is False
+          ET.parse('generated/now-playing.svg')
+          assert 'NOT CONNECTED' in open('generated/now-playing.svg').read()
+          print('Soundtrack privacy default: verified')
+          PY
+      - name: Verify the AI endpoint does not operate without its secret
+        env:
+          OPENAI_API_KEY: ""
+        run: |
+          node - <<'NODE'
+          const endpoint = require('./site/api/ask.js');
+          let code = null;
+          const req = {method:'POST',headers:{host:'localhost'},body:{question:'What is Pockit?'}};
+          const res = {setHeader(){},status(n){code=n;return this;},json(){return this;}};
+          endpoint(req,res).then(()=>{if(code!==503)process.exit(1);console.log('AI disabled without secret: verified');}).catch(()=>process.exit(1));
+          NODE
       - name: Validate every SVG, local README link, and feature inventory
         run: |
           python3 - <<'PY'

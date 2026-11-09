@@ -1,6 +1,7 @@
 <!-- ALI.OS — GitHub-safe SVG hero, no inline JavaScript -->
 <p align="center"><img src="./assets/hero.svg" width="100%" alt="ALI.OS · animated sci-fi command center of Ali Nikan"></p>
 
+<h1 align="center">Ali Nikan</h1>
 <h3 align="center">Software Developer · AI Builder · Game Enthusiast</h3>
 <p align="center"><strong>Building useful apps, intelligent tools, and playful digital experiences.</strong></p>
 <p align="center"><a href="#-featured-builds">Explore projects</a> · <a href="#-developer-rpg">Developer RPG</a> · <a href="#-the-arcade">Arcade</a> · <a href="#-communications">Contact</a></p>
