@@ -1,0 +1,34 @@
+name: Refresh optional Last.fm soundtrack station
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "19 3,9,15,21 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ali-os-soundtrack
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - name: Read opted-in public listening activity
+        env:
+          LASTFM_USERNAME: ${{ vars.LASTFM_USERNAME }}
+          LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
+        run: node scripts/update-lastfm.mjs
+      - name: Save updated public widget
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/now-playing.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: refresh opted-in soundtrack station [skip ci]"
+            git push
+          fi
