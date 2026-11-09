@@ -1,0 +1,30 @@
+name: ALI.OS arcade contribution games
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "39 8 * * 3"
+permissions:
+  contents: write
+
+concurrency:
+  group: ali-os-arcade
+  cancel-in-progress: false
+
+jobs:
+  arcade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Generate arcade contribution graphs
+        uses: abozanona/pacman-contribution-graph@main
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          games: 'pacman,galaga,breakout,snake,tetris,bomberman,minesweeper,puzzle-bobble'
+      - name: Publish generated images
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: arcade-output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
