@@ -78,7 +78,7 @@
   }
   function answer(question){
     const q=question.toLowerCase();
-    if(/(hello|hi|hey|help|what can you)/.test(q))return {text:"Hi! Ask about projects, game development, machine learning, TypeScript, React, or which apps have demos. I'll link relevant public source repositories."};
+    if(/\\b(hello|hi|hey|help)\\b|what can you/.test(q))return {text:"Hi! Ask about projects, game development, machine learning, TypeScript, React, or which apps have demos. I'll link relevant public source repositories."};
     if(/(contact|email|linkedin|reach|hire)/.test(q))return {text:"You can connect with Ali on GitHub or LinkedIn, or send an email.",links:[{url:"https://www.linkedin.com/in/alinikan79/",label:"LinkedIn"},{url:"mailto:ali.nikan79@gmail.com",label:"Email"}]};
     const tokens=q.match(/[a-z0-9]+/g)||[];
     const stop=new Set(["what","which","does","the","are","have","has","can","show","made","your","about","with","code","project","projects","you","built","this","that","for","how","where","is","me","tell","uses","use","using","an","a","in","i","and","to"]);
@@ -151,7 +151,7 @@
   void loadGuestbook();
 
   async function loadMusic(){try{const res=await fetch("./now-playing.json",{cache:"no-store"});if(!res.ok)return;const data=await res.json();if(!data.enabled||!data.track||!data.artist)return;
-      $("#music-title").textContent=data.track;const meta=$("#music-meta");meta.replaceChildren();meta.append(document.createTextNode((data.nowPlaying?"Now playing":"Last played")+" · "+data.artist));
+      $("#music-title").textContent=data.track;const meta=$("#music-meta");meta.replaceChildren();meta.append(document.createTextNode((data.nowPlaying&&data.updatedAt&&Date.now()-Date.parse(data.updatedAt)<10*60*1000?"Now playing":"Recently played")+" · "+data.artist));
       if(data.url&&/^https:\/\/www\.last\.fm\/music\//.test(data.url)){meta.append(document.createTextNode(" · "));meta.append(external(data.url,"Listen ↗"));}
     }catch(_){}}
   void loadMusic();
