@@ -1,55 +1,86 @@
-# ALI.OS — feature and integration roadmap
+# ALI.OS — Implementation, activation and review guide
 
-This file is the truthful implementation status for all 20 features proposed in the redesign. The profile README is a presentation surface, **not** a JavaScript runtime. It may embed compatible HTML, Markdown and SVG images; actual app interactions need a linked hosted website.
+## Scope and review protection
 
-## Built in this review branch
+The user selected **Nebula OS sci-fi visuals + Arcade gaming personality**, approved all twenty features, and specifically chose **Pac-Man as the primary contribution animation**, with all eight arcade options available within an expandable section.
 
-1. Cinematic ALI.OS boot hero — custom animated SVG, reduced-motion support.
-2. Developer RPG character sheet — class, identity and equipped technology tree (no fabricated scores).
-3. Living galaxy — visual SVG map of six real featured builds. Clicking destinations happens through project cards below, because clickable SVG regions are unreliable when embedded as images.
-4. Arcade contribution animation — workflow configured for eight generated styles; first published assets require running Action after merge.
-5. Hidden puzzle / easter egg — nested GitHub-native details; separate playable game linked.
-6. Mission control dashboard — telemetry block with generated stats images and activity shortcuts.
-7. Project showcases — eight real repositories, app links and screenshots from actual repos.
-8. Tech skill tree — grouped SVG graphic.
-9. Theme compatibility — high contrast art, GitHub dark/light arcade source choice; full custom seasonal variation pending.
-10. Developer timeline — chronological projects and education, no fabricated dates.
-11. What's New — links to latest project repos, not fabricated automatic releases.
-12. Reliable stats — GitHub Actions using stats-organization/github-readme-stats-action@v2 and local SVG caching; placeholders prior to first run.
-13. Real achievement badges — CS, ML, app shipping, game projects.
-14. Activity visualization — standard graph and arcade, with optional 3D graph workflow.
-15. Hidden expandable content — tech dossier, puzzles, optional modules.
-16. Section navigation — usable Markdown anchors.
+This entire redesign is in draft pull request #1, branch `feature/ali-os-sci-fi-arcade-redesign`. **Nothing in this branch automatically changes the live profile until the PR merges.** Do not merge without the user's explicit request.
 
-## Connected services or companion app needed
+## All 20 features — implementation matrix
 
-17. AI project concierge: requires a separate, deployed app, code-search/retrieval over curated public repos, a provider account and API key, budget controls, spam protection, and clear answers for unavailable source. Never put keys in a README, client code or repo. A demo app should start in *read only* mode and avoid crawling private repos. No assistant is live.
-18. Seasonal themes: implement an on-demand workflow for different generated assets with a default constant design and optional calendar rotation. Make dynamic SVGs motion-reduction-friendly. Not wired yet.
-19. Now Playing: requires Spotify/Last.fm consent and tokens, plus a privacy decision. Only publish intentionally shared listening information; no song is displayed until authorized.
-20. Guestbook: GitHub Discussions is currently disabled on alinikan/alinikan. Owner must enable it in repository settings, configure a category, then link directly to that category. If external, add spam moderation and privacy controls.
+| # | Feature | Implementation | Status |
+|---|---|---|---|
+| 01 | Cinematic ALI.OS boot hero | `assets/hero.svg`; custom animated SVG; reduced-motion support | Built, previewable in draft |
+| 02 | Developer RPG sheet | README dossier + `assets/skill-tree.svg` | Built |
+| 03 | Repository galaxy | README overview `assets/galaxy.svg`; clickable planets in `site/` | Built; interactive version requires site hosting |
+| 04 | Contribution arcade | Pac-Man main; eight options; local preview SVGs; generator workflow | Built; real data requires first Action run after merge |
+| 05 | Hidden easter egg | GitHub-native nested details and riddle | Built |
+| 06 | Mission Control | Consolidated metrics, activity, what's-new and status | Built |
+| 07 | Featured applications | Pockit, LexiLoop, Autopilot, Recomp; AI and games; real images | Built |
+| 08 | Animated skill tree | Static SVG of real technologies; RPG styling with animation-ready component design | Built visually; individual tree-node motion not claimed |
+| 09 | Dark/light support | SVG readability, GitHub picture sources for arcade, styled companion | Built, requires visual check in GitHub themes |
+| 10 | Developer timeline | Education, ML, games and modern application arc | Built |
+| 11 | What's New panel | Links to latest meaningful public projects; avoids fake auto-news | Built |
+| 12 | Reliable GitHub Stats | `telemetry.yml`; pinned maintained generator; local fallbacks | Configured; real stats require first Action run |
+| 13 | Achievements | `assets/achievements.svg` with evidenced milestones | Built |
+| 14 | Activity visualization | Native activity links + arcade + 3D skyline workflow | Configured; real 3D data requires first run |
+| 15 | Expandable sections | Dossier, timelines, arcade, puzzle and bonus modules | Built |
+| 16 | Section navigation | Stable README section anchors and companion navigation | Built |
+| 17 | AI project concierge | Functional offline public-project guide + optional Vercel API adapter | Local guide built; model API disabled pending deployment/key/abuse controls |
+| 18 | Seasonal themes | Nebula, Winter and Arcade SVGs; monthly + manual Action; site switcher | Built; automation runs after merge |
+| 19 | Now Playing | Last.fm updater + JSON + display; no arbitrary or invented music | Built as an opt-in connection; disabled until user connects a public account |
+| 20 | Visitor guestbook | GitHub Issue form, approval labels, client-side approved issues feed | Built; submissions activate after merge; approval labels require owner setup |
 
-## Activation checklist
+### Intentional overlap resolution
 
-- Review and merge this branch through a PR. **The preview branch does not affect the existing profile until it is merged.**
-- In **Settings → Actions → General**, ensure workflows can run and `GITHUB_TOKEN` is permitted to write repository contents where required. Restrict access to this repository.
-- Trigger `Refresh ALI.OS telemetry` manually under **Actions**; verify successful artifacts in `generated/` and images rendered in the README.
-- Trigger `ALI.OS arcade contribution games`; verify the `arcade-output` branch and all generated filenames. The action must be permitted to publish the branch. The main Pac-Man embed will be unavailable until that branch exists.
-- Trigger `Refresh 3D contribution skyline`; after its first successful run, optionally embed `profile-3d-contrib/profile-night-rainbow.svg` or whichever file it actually generates. Do not guess filenames.
-- Verify every external hosted demo is accessible and still appropriate to share publicly.
-- Keep all profile stats derived from public data unless you intentionally set up a narrower-scope token for private contribution counts.
-- If scheduled workflows stop after inactivity, use workflow_dispatch or commit to reactivate them.
-- Avoid relying on exact action branch/tag references forever. Pin verified full commit SHAs before production security hardening; dependabot can help maintain versions.
-- Validate README rendering in dark and light GitHub themes, mobile and reduced-motion modes.
+- **RPG vs achievements:** identity and tool inventory vs evidence-backed milestones.
+- **Galaxy vs project cards:** cinematic overview vs practical details, demos and source.
+- **Mission Control vs stats vs activity:** one dashboard with distinct views; no redundant stat stacks.
+- **Pac-Man vs other game modes vs 3D:** Pac-Man first; *all eight* in details; 3D is separate optional camera angle.
+- **Tech badges vs skill tree:** tech tree is main inventory; social badges only navigate to destinations.
+- **What's New vs generic activity:** curated current projects vs chronological GitHub activity.
+- **README vs companion website:** README is lightweight + static/animated SVGs; true JS interactivity is in `site/`.
 
-## Duplicate feature policy
+## Preview without merging
 
-- **RPG sheet vs achievements:** profile identity vs evidenced milestones.
-- **Galaxy vs project cards:** visual overview vs useful detailed links.
-- **Mission control vs GitHub statistics:** surrounding dashboard vs individual metric graphics.
-- **Arcade games vs 3D contributions:** main Pac-Man, alternative games in details, 3D contribution option in its own details area.
-- **Tech tree vs badges:** skill tree is the primary inventory; small social/navigation badges are links, not duplicated technologies.
-- **Project activity vs What's New:** live project links are truthful; no fake changelog or artificial automatic status.
-- **Music / guestbook / concierge:** distinct integrations, not working widgets until each prerequisite is satisfied.
+1. Review [draft PR #1](https://github.com/alinikan/alinikan/pull/1) and the branch README.
+2. To run the interactive portal locally, follow [site/README.md](../site/README.md), which requires only Python 3's built-in static server.
+3. Use the [CI validation workflow](../.github/workflows/validate.yml) for JavaScript syntax, SVG well-formedness, local README links and all eight arcade modes.
+4. Inspect dark and light rendering, mobile widths, and reduced-motion behavior manually before merge.
+5. Do not interpret the labelled pre-activation illustrations as actual contribution data.
+
+## Activation after explicit merge approval
+
+### A. GitHub stats / arcade / 3D
+
+- Ensure GitHub Actions runs are allowed and workflow token can write repository contents. Since the workflows commit only files in this profile repo, keep permissions as narrow as possible.
+- Run **Refresh ALI.OS telemetry**, verify `generated/stats.svg` and `generated/languages.svg` no longer contain placeholder content.
+- Run **ALI.OS arcade contribution games**, verify all **16** light/dark SVG outputs exist in `generated/arcade/` and Pac-Man is the leading profile graphic.
+- Run **Refresh 3D contribution skyline**, verify the generated file `profile-3d-contrib/profile-night-rainbow.svg` has replaced the marked preview.
+- Check GitHub Actions logs for upstream API or token errors, rather than assuming success.
+- Scheduled Actions may be disabled after long repository inactivity; manual `workflow_dispatch` remains the recovery option.
+
+### B. Seasonal theme and website
+
+- Run **Rotate ALI.OS seasonal themes** (optional initial selection, or automatic monthly schedule).
+- To host the interactive companion, enable GitHub Pages in repository Settings → Pages (Source: GitHub Actions), then run **Publish ALI.OS Companion Portal**. The public site would be `https://alinikan.github.io/alinikan/` after deployment; **it is not live now**.
+- If preferring model-powered answers, deploy `site` as a **separate Vercel project** using the setup notes in [site/README.md](../site/README.md). This is not required for the other features.
+
+### C. AI, music and guestbook
+
+- **AI model:** never commit `OPENAI_API_KEY`; configure a protected secret in a server-side deployment, provider spend caps, and platform-wide abuse throttling; then set a same-origin API endpoint in the site meta tag. Until then the local project guide works without AI.
+- **Listening feed:** optional only. Configure public `LASTFM_USERNAME` as a repo variable and `LASTFM_API_KEY` as a secret. The workflow generates only the opted-in public data. See privacy/opt-out instructions in [site/README.md](../site/README.md).
+- **Guestbook:** repository Issues are already enabled. After merge, create issue labels `guestbook-pending` and `guestbook-approved` if missing; use the prepared Issue form. Only approved messages appear in the companion site. All submitted GitHub issues are public before approval, so the form warns visitors not to share private data.
+- Neither a secret, listening account, nor AI connection is required to display the README itself.
+
+## Security and quality
+
+- GitHub Actions use pinned full commit SHAs from official release tags or verified upstream commits. Update intentionally after reviewing upstream changes.
+- The browser has a conservative CSP, no external JS or tracking analytics, and uses DOM text nodes rather than untrusted HTML insertion.
+- The AI adapter uses server-side credentials, bounded prompts and responses, and a curated public dataset. Origin checks and output budgets do not replace an edge WAF / rate limiter.
+- Complicated interactive visuals aren't embedded as scripts in GitHub's README because GitHub strips them.
+- Project URLs should be periodically verified, and private repositories must not be exposed without permission.
+- Stats widgets only become real once the relevant workflow succeeds; marked fallback images are intentional.
 
 ## References
 
