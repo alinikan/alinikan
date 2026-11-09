@@ -2,6 +2,8 @@
 
 ## Scope and review protection
 
+For complete, step-by-step publication and connector instructions, see **[LAUNCH_CHECKLIST.md](./LAUNCH_CHECKLIST.md)**.
+
 The user selected **Nebula OS sci-fi visuals + Arcade gaming personality**, approved all twenty features, and specifically chose **Pac-Man as the primary contribution animation**, with all eight arcade options available within an expandable section.
 
 This entire redesign is in draft pull request #1, branch `feature/ali-os-sci-fi-arcade-redesign`. **Nothing in this branch automatically changes the live profile until the PR merges.** Do not merge without the user's explicit request.
@@ -13,17 +15,17 @@ This entire redesign is in draft pull request #1, branch `feature/ali-os-sci-fi-
 | 01 | Cinematic ALI.OS boot hero | `assets/hero.svg`; custom animated SVG; reduced-motion support | Built, previewable in draft |
 | 02 | Developer RPG sheet | README dossier + `assets/skill-tree.svg` | Built |
 | 03 | Repository galaxy | README overview `assets/galaxy.svg`; clickable planets in `site/` | Built; interactive version requires site hosting |
-| 04 | Contribution arcade | Pac-Man main; eight options; local preview SVGs; generator workflow | Built; real data requires first Action run after merge |
+| 04 | Contribution arcade | Pac-Man main; eight options; local preview SVGs; generator workflow | Generated successfully from real public GitHub data on draft; scheduled after merge after merge |
 | 05 | Hidden easter egg | GitHub-native nested details and riddle | Built |
-| 06 | Mission Control | Consolidated statistics, actual public-build signals and playful XP | Built; real data requires first Action run |
+| 06 | Mission Control | Consolidated statistics, actual public-build signals and playful XP | Generated successfully from real public GitHub data on draft; scheduled after merge |
 | 07 | Featured applications | Pockit, LexiLoop, Autopilot, Recomp; AI and games; real images | Built |
 | 08 | Animated skill tree | SVG with softly pulsing nodes and travelling signals; reduced-motion fallback | Built |
 | 09 | Dark/light support | SVG readability, GitHub picture sources for arcade, styled companion | Built, requires visual check in GitHub themes |
 | 10 | Developer timeline | Education, ML, games and modern application arc | Built |
-| 11 | What's New panel | Curated project links plus dynamically generated most-recent public push dates | Built; live signals require first Action run |
-| 12 | Reliable GitHub Stats | `telemetry.yml`; pinned maintained generator; local fallbacks | Configured; real stats require first Action run |
+| 11 | What's New panel | Curated project links plus dynamically generated most-recent public push dates | Generated successfully from real public GitHub data on draft |
+| 12 | Reliable GitHub Stats | `telemetry.yml`; pinned maintained generator; local fallbacks | Tested successfully; generated real stats and language cards |
 | 13 | Achievements | `assets/achievements.svg` with evidenced milestones | Built |
-| 14 | Activity visualization | Native activity links + arcade + 3D skyline workflow | Configured; real 3D data requires first run |
+| 14 | Activity visualization | Native activity links + arcade + 3D skyline workflow | Tested successfully; real 3D skyline generated |
 | 15 | Expandable sections | Dossier, timelines, arcade, puzzle and bonus modules | Built |
 | 16 | Section navigation | Stable README section anchors and companion navigation | Built |
 | 17 | AI project concierge | Functional offline public-project guide + optional Vercel API adapter | Local guide built; model API disabled pending deployment/key/abuse controls |
@@ -54,7 +56,8 @@ This entire redesign is in draft pull request #1, branch `feature/ali-os-sci-fi-
 ### A. GitHub stats / arcade / 3D
 
 - Ensure GitHub Actions runs are allowed and workflow token can write repository contents. Since the workflows commit only files in this profile repo, keep permissions as narrow as possible.
-- Run **Refresh ALI.OS public mission signals**, verify `generated/mission.svg` and `generated/developer-xp.svg` contain real GitHub public-repository data. XP is 100 per public original repo plus 30 per public star, not a skill rating.\n- Run **Refresh ALI.OS telemetry**, verify `generated/stats.svg` and `generated/languages.svg` no longer contain placeholder content.
+- Run **Refresh ALI.OS public mission signals**, verify `generated/mission.svg` and `generated/developer-xp.svg` contain real GitHub public-repository data. XP is 100 per public original repo plus 30 per public star, not a skill rating.
+- Run **Refresh ALI.OS telemetry**, verify `generated/stats.svg` and `generated/languages.svg` no longer contain placeholder content.
 - Run **ALI.OS arcade contribution games**, verify all **16** light/dark SVG outputs exist in `generated/arcade/` and Pac-Man is the leading profile graphic.
 - Run **Refresh 3D contribution skyline**, verify the generated file `profile-3d-contrib/profile-night-rainbow.svg` has replaced the marked preview.
 - Check GitHub Actions logs for upstream API or token errors, rather than assuming success.

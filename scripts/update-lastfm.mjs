@@ -3,7 +3,7 @@ import { writeFile, mkdir } from 'node:fs/promises';
 const destination = new URL('../site/now-playing.json', import.meta.url);
 const cardDestination = new URL('../generated/now-playing.svg', import.meta.url);
 const xml = value => String(value ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;');
-const singleLine = (value,limit=44) => {const text=String(value??'').replace(/[\\x00-\\x1f\\x7f]/g,' ').trim();return text.length>limit?text.slice(0,limit-1)+'…':text;};
+const singleLine = (value,limit=44) => {const text=String(value??'').replace(/[\x00-\x1f\x7f]/g,' ').trim();return text.length>limit?text.slice(0,limit-1)+'…':text;};
 const disable = () => ({ enabled: false, track: null, artist: null, nowPlaying: false, updatedAt: null, url: null });
 const username = (process.env.LASTFM_USERNAME || '').trim();
 const apiKey = (process.env.LASTFM_API_KEY || '').trim();
@@ -18,7 +18,7 @@ if (username && apiKey) {
     url.searchParams.set('format', 'json');
     url.searchParams.set('limit', '1');
 
-    const response = await fetch(url, { signal: AbortSignal.timeout(12000) });
+    const response = await fetch(url, { signal: AbortSignal.timeout(12000), headers: { 'User-Agent': 'ALI.OS-Profile/1.0 (https://github.com/alinikan/alinikan)' } });
     if (!response.ok) throw Error('Last.fm responded with HTTP ' + response.status);
     const data = await response.json();
     const input = data?.recenttracks?.track;
