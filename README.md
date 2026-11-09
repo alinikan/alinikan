@@ -185,6 +185,16 @@ No invented proficiency percentages: this is an inventory of technologies used o
 <img src="./generated/languages.svg" alt="GitHub repository language breakdown; replaced automatically after the first workflow run" width="49%" />
 </div>
 
+### 🎯 Recent build signals & developer XP
+
+<div align="center">
+<img src="./generated/mission.svg" alt="Recent public repositories, updated by a GitHub Action after activation" width="49%" />
+<img src="./generated/developer-xp.svg" alt="Transparent just-for-fun public GitHub repository XP meter, updated after activation" width="49%" />
+</div>
+
+The XP meter is playful: **100 XP per public original repository + 30 XP per public repository star**, with 500 XP per level. It's a game mechanic, **not a measurement of engineering skill**. Recent builds are selected by actual public repository push dates, not claimed to be my personal priorities. These preview images are replaced by the [public mission workflow](./.github/workflows/mission.yml) after its first successful run.
+
+
 <details>
 <summary><b>⚙️ Telemetry maintenance and refresh</b></summary>
 
