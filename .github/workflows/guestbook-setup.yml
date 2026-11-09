@@ -1,0 +1,25 @@
+name: Prepare guestbook labels
+
+on:
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  labels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Create moderated guestbook labels if missing
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          if ! gh api "repos/$GITHUB_REPOSITORY/labels/guestbook-pending" >/dev/null 2>&1; then
+            gh api -X POST "repos/$GITHUB_REPOSITORY/labels" -f name=guestbook-pending -f color=F9C74F -f description="Guestbook message pending owner review"
+          fi
+          if ! gh api "repos/$GITHUB_REPOSITORY/labels/guestbook-approved" >/dev/null 2>&1; then
+            gh api -X POST "repos/$GITHUB_REPOSITORY/labels" -f name=guestbook-approved -f color=3FB950 -f description="Approved public visitor transmission"
+          fi
