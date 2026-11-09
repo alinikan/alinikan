@@ -78,7 +78,7 @@
   }
   function answer(question){
     const q=question.toLowerCase();
-    if(/\\b(hello|hi|hey|help)\\b|what can you/.test(q))return {text:"Hi! Ask about projects, game development, machine learning, TypeScript, React, or which apps have demos. I'll link relevant public source repositories."};
+    if(/\b(hello|hi|hey|help)\b|what can you/.test(q))return {text:"Hi! Ask about projects, game development, machine learning, TypeScript, React, or which apps have demos. I'll link relevant public source repositories."};
     if(/(contact|email|linkedin|reach|hire)/.test(q))return {text:"You can connect with Ali on GitHub or LinkedIn, or send an email.",links:[{url:"https://www.linkedin.com/in/alinikan79/",label:"LinkedIn"},{url:"mailto:ali.nikan79@gmail.com",label:"Email"}]};
     const tokens=q.match(/[a-z0-9]+/g)||[];
     const stop=new Set(["what","which","does","the","are","have","has","can","show","made","your","about","with","code","project","projects","you","built","this","that","for","how","where","is","me","tell","uses","use","using","an","a","in","i","and","to"]);
