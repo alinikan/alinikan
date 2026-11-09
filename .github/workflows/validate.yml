@@ -26,7 +26,6 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           node --check site/app.js
-          node --check scripts/update-mission.mjs
       - name: Validate every SVG, local README link, and feature inventory
         run: |
           python3 - <<'PY'
@@ -40,11 +39,14 @@ jobs:
               ET.parse(f)
           readme = Path('README.md').read_text(encoding='utf-8')
           for name in ['Pac-Man','Pockit','LexiLoop','Autopilot','Recomp']:
-              assert name in readme, f'Missing arcade game: {name}'
+              assert name in readme, f'Missing profile highlight: {name}'
           assert 'github-readme-stats.vercel.app' not in readme, 'Broken old stats endpoint still referenced'
           for forbidden in ['Project constellation','Developer RPG','developer XP','Classified: Area 79','Choose from all eight arcade modes','Mission telemetry','Bonus features and interactive portal','GitHub Readme Stats Action','Telemetry maintenance','Activity intel','Six project systems']:
               assert forbidden.lower() not in readme.lower(), f'Unwanted profile section remains: {forbidden}'
           assert readme.count('pacman-contribution-graph.svg') >= 1
+          assert 'generated/developer-xp.svg' not in readme
+          assert 'generated/arcade/galaga' not in readme
+          assert 'Project constellation' not in readme
           assert '232639433-cb0aea21-66f0-4508-a771-85e2089c5a87.gif' in readme
           for forbidden in ['OpenAI API','Last.fm','Spotify','now-playing','api/ask','alios-ai-endpoint']:
               assert forbidden.lower() not in readme.lower(), f'Removed third-party dependency still in README: {forbidden}'
@@ -59,7 +61,7 @@ jobs:
           for link in refs:
               resolved = root / link.removeprefix('./')
               assert resolved.is_file(), f'Broken local README link: {link}'
-          for name in ['site/index.html','site/styles.css','site/app.js','scripts/update-mission.mjs','generated/mission.svg','generated/developer-xp.svg','.github/ISSUE_TEMPLATE/guestbook.yml','docs/INTEGRATIONS.md']:
+          for name in ['site/index.html','site/styles.css','site/app.js','.github/ISSUE_TEMPLATE/guestbook.yml','docs/INTEGRATIONS.md']:
               assert Path(name).is_file(), f'Missing expected file: {name}'
           print(f'Validated {len(svgs)} SVGs, {len(refs)} local links, and required features')
           PY

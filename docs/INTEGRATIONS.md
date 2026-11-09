@@ -22,7 +22,7 @@ The main README still uses `generated/stats.svg`, `generated/languages.svg`, and
 
 The following automated refreshes are relevant:
 - `.github/workflows/telemetry.yml` — stats and language graphics.
-- `.github/workflows/arcade.yml` — generated Pac-Man visual and optional unused game variants.
+- `.github/workflows/arcade.yml` — the single Pac-Man contribution animation (light and dark versions).
 
 The previous developer XP generator, mission panel, scheduled 3D graph, and seasonal README banner rotation are no longer needed for the public landing page.
 

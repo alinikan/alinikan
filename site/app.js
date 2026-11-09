@@ -19,9 +19,6 @@
     {id:"maze",name:"Maze",category:"game",label:"JAVA GAME",symbol:"▧",
      color:"#f9a8d4",position:[65,45],tech:["Java","MVC","Unit Testing","Games"],description:"A 2D Java maze game with enemies, levels, an MVC design and tests.",repo:"https://github.com/alinikan/MazeRunner"}
   ];
-  const games=["pacman","galaga","breakout","snake","tetris","bomberman","minesweeper","puzzle-bobble"];
-  const path = "https://raw.githubusercontent.com/alinikan/alinikan/main/generated/arcade/";
-
   const addText=(tag,text,cls)=>{const e=document.createElement(tag);e.textContent=text;if(cls)e.className=cls;return e;};
   const external=(href,label)=>{const a=document.createElement("a");a.href=href;a.textContent=label;a.target="_blank";a.rel="noopener noreferrer";return a;};
 
@@ -68,13 +65,6 @@
   const seasonal=(month===12||month<=2)?"winter":month===10?"arcade":"nebula";
   setTheme(themes.includes(saved)?saved:seasonal);
   document.querySelectorAll("[data-select-theme]").forEach(b=>b.addEventListener("click",()=>setTheme(b.dataset.selectTheme)));
-
-  const gameLinks=$("#game-links");
-  for(const g of games){const label=g==="puzzle-bobble"?"Puzzle Bobble":g[0].toUpperCase()+g.slice(1);
-    const a=external(path+g+"-contribution-graph-dark.svg",label+" ↗");
-    a.title="Generated game asset — appears after the GitHub Action has run";
-    gameLinks.append(a);
-  }
 
   const log=$("#chat-log"),qInput=$("#chat-question"),form=$("#chat-form");
   function say(message,role,links=[]){

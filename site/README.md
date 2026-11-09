@@ -12,7 +12,7 @@ This repository contains an interactive, professional sci-fi × gaming companion
 - Original **Starfall** mini-game (30 seconds, keyboard and pointer/touch input).
 - Theme picker saved locally in your own browser.
 - Visitor guestbook that reads publicly approved GitHub Issues (requires one-time label setup after merge).
-- All eight contribution-game links, including the Pac-Man primary choice.
+- Original Starfall mini-game for visitors; the GitHub profile features one Pac-Man contribution animation.
 - No visitor tracking, login requirement for browsing, paid scripts, or custom server backend.
 
 ## Preview locally on your Mac

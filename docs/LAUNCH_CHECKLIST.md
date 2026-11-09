@@ -38,7 +38,7 @@ After merge, open [GitHub Actions](https://github.com/alinikan/alinikan/actions)
 
 Both workflows are scheduled to refresh automatically. Only Pac-Man is embedded in your public README. If a future update fails, the last generated graphic remains in the repository. If workflows are disabled for inactivity, re-enable them from Actions and run manually. If a job cannot commit, review Settings → Actions → General and the workflow's `contents: write` permission.
 
-The other arcade graphics can remain as unused generated assets; they are not offered as links or selectors on the landing page.
+The arcade workflow now generates just the Pac-Man light/dark graphics used on the landing page.
 
 ## Optional: the separate interactive website
 
