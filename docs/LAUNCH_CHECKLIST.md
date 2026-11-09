@@ -1,220 +1,212 @@
-# ALI.OS — Complete Launch, Connections, and Troubleshooting Guide
+# ALI.OS — Complete FREE Setup, Publishing & Maintenance Guide
 
-**Owner:** `alinikan` · **Repository:** `https://github.com/alinikan/alinikan`  
-**Main project:** profile README plus optional interactive companion portal.  
-**Review branch:** `feature/ali-os-sci-fi-arcade-redesign` · **Draft PR:** [#1](https://github.com/alinikan/alinikan/pull/1)
+**Last reviewed:** November 9, 2026  
+**Profile:** [github.com/alinikan](https://github.com/alinikan)  
+**Profile repository:** [alinikan/alinikan](https://github.com/alinikan/alinikan)  
+**Release PR:** [ALI.OS Pull Request #1](https://github.com/alinikan/alinikan/pull/1)
 
-> **Important:** The repository's `main` branch controls your real GitHub profile. All work remains isolated to the review branch until you personally merge PR #1. The stats, arcade and 3D artwork have now been successfully generated from real public GitHub data on the branch. You do not need to rebuild them manually.
+> **Your goal:** A stylish sci-fi × gaming GitHub profile with animated graphics, real GitHub activity stats, Pac-Man as the main contribution animation, seven other arcade games, a separate interactive portfolio, an original mini-game, an expandable project guide and a moderated guestbook. **No paid services, private keys, new third-party accounts, or music integrations.**
 
-## 0. What do I actually need?
+## 1. What is free, what is required?
 
-| Feature | Account/service | Required? | Cost / privacy |
+| Item | Service | Account / payment needed? | Purpose |
 |---|---|---|---|
-| GitHub profile README, animated assets, all 8 arcade contribution games, stats, mission, XP, 3D, scheduled themes | Your **existing GitHub account** and GitHub Actions | **Yes, already connected** | Public repo / public activity; no special third-party account |
-| Interactive companion website — galaxy, project search, local guide, mini-game, themes, guestbook reader | GitHub Pages **or** Vercel | Choose **one** | Pages on public repositories is normally free. Vercel Hobby has usage restrictions |
-| Live model-powered AI project concierge | **OpenAI API platform** + **Vercel hosting** + rate limiting | Only to enable actual AI answers | API usage bills separately from ChatGPT, potentially paid. The local non-AI project guide needs none |
-| Visitor message submissions | GitHub Issues + the provided issue template and moderation labels | Already part of GitHub, setup required | Public Issues; no secrets or additional database |
-| Recently played / Now Playing | Last.fm account and developer API key | **Optional opt-in only** | Public listening activity; disabled unless you choose to enable it |
-| Spotify scrobbling | Connect Spotify to Last.fm, if you use Spotify | Optional | Do not connect if you don't want your songs published |
+| Main profile and README | GitHub | Existing GitHub account only | Your existing `alinikan/alinikan` profile README |
+| Stats, languages, RPG XP, projects, 3D contributions, all 8 arcade graphs | GitHub Actions | No additional account or paid API key | Scheduled SVG updates stored in your repository |
+| Interactive ALI.OS website | **GitHub Pages** | No additional account; free for public repositories | Galaxy, project search, local guide, Starfall, theme picker and guestbook viewer |
+| Guestbook | GitHub Issues | Existing GitHub account | Public submissions; approved by you before being shown on the companion website |
+| Design assets | SVG and CSS/JavaScript stored in GitHub | No | Sci-fi theme, season changes, animations and effects |
 
-**Not needed:** an extra database, Supabase, Gmail, a Discord bot, Spotify API keys, a domain name, a ChatGPT plugin, or a paid Vercel plan for the base profile.
+**You do not need to sign up for anything else.** The built-in **Project Navigator** works in your browser using a curated project list. It is searchable and useful, but it is not a generative AI chatbot. It neither sends questions to a paid model nor requires a backend.
 
-**My full-feature recommendation:** Keep GitHub as the profile host, and use **Vercel** as the only companion host if you want the model-backed AI concierge. Use GitHub Pages instead if you want to avoid setting up paid AI entirely.
+GitHub Pages is available for **public repositories on GitHub Free**. Standard GitHub-hosted Actions runners are free for public repositories, subject to GitHub's policies and abuse limits. Your `alinikan/alinikan` profile repository must stay public.
 
-## 1. Review the draft first — before publishing anything
+Useful official documentation: [GitHub Pages publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) · [Creating a GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) · [GitHub profile README](https://docs.github.com/en/account-and-profile/how-tos/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme).
 
-1. Open [the draft pull request](https://github.com/alinikan/alinikan/pull/1).
-2. Select **Files changed** to see the new `README.md`, graphics, workflows and site.
-3. Open [the draft README](https://github.com/alinikan/alinikan/blob/feature/ali-os-sci-fi-arcade-redesign/README.md) to preview the new profile. Use GitHub's dark/light theme setting to inspect contrast.
-4. Open [the Actions validation history](https://github.com/alinikan/alinikan/actions/workflows/validate.yml), choose the newest commit matching the current PR head, and check **both** validation jobs are green.
-5. Open that green run and expand **Artifacts**. Download `alios-portal-preview-and-tests`, containing desktop and mobile screenshots and the Playwright report.
-6. Examine the modern apps, project links, Pac-Man, all 7 other arcade modes, the 3D graph, the RPG XP description, and the optional offline soundtrack.
-7. Do not merge until you like it. Future edits can still be committed to this draft branch.
+## 2. What is already complete and tested?
 
-### What about the earlier GitHub email saying “No jobs were run”?
+- ✅ Cinematic animated ALI.OS banner with reduced-motion handling, and Nebula/Winter/Arcade colour presets.
+- ✅ Clean sci-fi and gaming-themed README showcasing newer real software projects, ML, games, timeline and achievements.
+- ✅ Developer RPG visual skill tree, real-repository XP formula, original galaxy visualization and expandable hidden puzzle.
+- ✅ **Real generated GitHub Stats and Top Languages** stored inside the profile repo (no broken third-party public image endpoint).
+- ✅ **Real Pac-Man contribution animation as the main graphic**, with seven alternate games in the expandable Arcade section. All eight were successfully generated from GitHub data.
+- ✅ Real 3D contribution skyline and recently updated public projects from GitHub data.
+- ✅ Interactive, browser-tested ALI.OS companion site with project search, clickable planets, local Project Navigator and playable original Starfall mini-game.
+- ✅ Automatic monthly seasonal themes and a moderated visitor guestbook design.
+- ✅ Desktop and mobile Playwright tests in the PR validation workflow.
+- ✅ GitHub Pages publishing workflow included, ready to run after you choose to publish.
+- ❌ No model API, music service, secret tokens or paid hosting code. The abandoned optional integrations were removed from the working tree.
 
-The failed run [42674311056](https://github.com/alinikan/alinikan/actions/runs/42674311056) belonged to old commit `65a7846`. GitHub registered **zero jobs** for that run — it was not a failing test assertion. Later workflows and actual generator jobs succeeded. Always compare the run's **commit SHA**, not simply whether any historical red badge exists.
+**Still needs one-time owner activation:** merging PR #1; enabling GitHub Pages; running (or verifying) the Actions workflows on `main`; and creating guestbook moderation labels. **No cost or special external credentials.**
 
-If a *new* run again reports no jobs, open its summary, check workflow path filters and GitHub Actions settings, and rerun once. If it remains reproducible, inspect its actual workflow-run event, not just email text. Report a GitHub-side issue if no jobs can be scheduled. Do **not** disable validation to make it green.
+## 3. First: review the final pull request
 
-## 2. Preview the interactive website on your Mac (optional but useful)
+1. Open **[Pull Request #1](https://github.com/alinikan/alinikan/pull/1)**.
+2. Check **Checks** and make sure the newest commit has passing static and browser validation. Historical failed runs are not the status of the current commit.
+3. Select **Files changed** to review `README.md`, `site/`, `assets/`, `generated/` and `.github/workflows/`.
+4. View the [draft profile README on the feature branch](https://github.com/alinikan/alinikan/blob/feature/ali-os-sci-fi-arcade-redesign/README.md). Test light/dark GitHub theme if desired.
+5. In the latest successful Actions validation, expand **Artifacts** and download `alios-portal-preview-and-tests` to see desktop/mobile previews and browser test results.
+6. You can also preview the companion website locally; see Section 4.
+7. When you approve everything, proceed to Section 5. **This guide does not merge your PR automatically.**
 
-Without installing a package manager or paying for hosting:
+### About the “No jobs were run” GitHub email
 
-1. Open the draft PR → **Code** / branch view. Download the feature branch as ZIP (Code → Download ZIP) or clone it locally.
-2. In macOS Terminal, open the extracted repository directory.
-3. Run:
+That warning came from a **historical PR revision** (commit `65a7846`). That run showed no executed jobs. Later checks and the real graphics-generating workflows succeeded. Look at the newest commit's Checks tab rather than older warning emails. If you ever see the same failure for the newest commit, investigate the run's event and GitHub Actions permissions before merging.
+
+## 4. Optional: preview the companion on your Mac
+
+**Option A: Preview the GitHub-generated screenshots** — the fastest method:
+
+1. In the draft PR choose **Checks**, open the newest passing **Validate ALI.OS draft** run.
+2. In **Artifacts**, download `alios-portal-preview-and-tests`.
+3. Open the desktop/mobile screenshots to inspect layout and colours.
+
+**Option B: Open the website locally** — you can click the planets and play Starfall:
+
+1. Open the repository code on the feature branch and click **Code → Download ZIP**.
+2. Unzip to a folder on your Mac.
+3. Open **Terminal**, type `cd ` (including the space), drag your unzipped repository folder into Terminal, and press Return.
+4. Run:
 
 ```bash
 cd site
 python3 -m http.server 4173
 ```
 
-4. Open `http://localhost:4173` in Safari or Chrome.
-5. Test the constellation planets, search, local Q&A guide, Starfall, theme switching, and guestbook fallback. Press **Control+C** to stop the local server.
+5. Open **http://localhost:4173** in Safari or Chrome.
+6. Test project filters, galaxy planets, Project Navigator questions, Starfall, seasonal site themes and guestbook display.
+7. Stop the local server with **Control + C**. No package manager or paid service is needed.
 
-For the automated tests, install Node.js 24 (only if you want to run development tests), then from `site/`:
+If Python 3 isn't present, you can skip the local preview and rely on the already-automated browser tests.
 
-```bash
-npm install
-npx playwright install chromium
-npm run test:e2e
-```
+## 5. Publish the README to your real GitHub profile
 
-The CI already runs these on desktop and mobile; you do **not** need Node just to view the site.
+This is the only step that replaces your existing public profile. **Do this when you actually want the new profile published.**
 
-## 3. Publish the new GitHub profile (only after approving PR #1)
+1. Open [PR #1](https://github.com/alinikan/alinikan/pull/1).
+2. Confirm the newest validation is green and you're satisfied with the profile.
+3. The pull request should be **Ready for review**, not Draft. If it says Draft, use **Ready for review**.
+4. At the bottom, select **Squash and merge**, then **Confirm squash and merge**.
+5. Open **https://github.com/alinikan**. The new ALI.OS README should appear automatically: GitHub treats the root-level `README.md` in the public `alinikan/alinikan` repository as your profile README.
+6. If you still see the old banner, reload or wait for GitHub's image cache to refresh.
+7. Keep the old source branch temporarily until you are satisfied; the merge is safely reversible with git history.
 
-When you decide the design is final:
+**You do not need to manually run `git push` or paste the README anywhere.** The code is already pushed to your GitHub PR branch. Merging incorporates those changes into `main`.
 
-1. Go to [PR #1](https://github.com/alinikan/alinikan/pull/1).
-2. Check that the latest validation is green and that you're happy with the preview.
-3. Select **Ready for review** to take the PR out of draft, if GitHub still labels it Draft.
-4. Select **Squash and merge** (recommended to keep one clean release commit on `main`), then **Confirm squash and merge**. You can leave the source branch until you have verified everything.
-5. Open **https://github.com/alinikan**. Your new profile appears automatically because the public repository is named `alinikan/alinikan` and has a root-level `README.md`.
-6. Refresh if your browser/GitHub image cache temporarily shows the old content.
-7. If anything looks wrong, you can revert the merge commit via GitHub or restore the earlier README from git history.
+## 6. Deploy the FREE interactive website using GitHub Pages
 
-You do **not** need to copy and paste the README. You do **not** need a separate `git push` from your computer; the commits are already on the draft GitHub branch.
+This is the **only recommended hosting path** for this no-cost version.
 
-**Optional terminal alternative**, after reviewing and getting the required approval:
+1. Open [your repository's Pages settings](https://github.com/alinikan/alinikan/settings/pages).
+2. In **Build and deployment → Source**, choose **GitHub Actions**, not "Deploy from a branch". (A custom Pages workflow is already committed.)
+3. Go to the [Actions tab](https://github.com/alinikan/alinikan/actions).
+4. In the left menu select **Publish ALI.OS Companion Portal**.
+5. Choose **Run workflow**, ensure the branch is **main**, and confirm the run. Your workflow copies the static website assets from `site/` and publishes them via GitHub Pages.
+6. Open the workflow and check that the **deploy** job is green. If it says Pages is disabled or environment not configured, revisit Step 2 and rerun.
+7. Return to **Settings → Pages**, select **Visit site**. Your expected project address is:
 
-```bash
-gh pr ready 1 --repo alinikan/alinikan
-gh pr merge 1 --squash --repo alinikan/alinikan
-```
+   **https://alinikan.github.io/alinikan/**
 
-Do not run these commands until you intend to publish.
+   This URL is a **predicted address** until GitHub confirms the successful deployment. Do not assume it's live before Step 6.
+8. Test the deployed website on a computer and mobile phone. Try the project constellation, filtering, local Q&A project guide, Starfall mini-game, seasonal themes and guestbook. The local guide needs no API key.
+9. Add the *verified* Pages URL to your GitHub profile: open your profile → **Edit profile** → **Website** → paste URL → **Save**.
+10. Optionally edit the root `README.md` after deployment to turn the companion-site source link into a link to the working Pages site. The source code stays open for visitors too.
 
-## 4. Make GitHub Stats and every contribution graphic stay refreshed
+If you want only the GitHub README and not a separate website, **you can skip this whole section**; all the profile visuals and stats still work.
 
-The draft branch already contains genuinely generated `generated/stats.svg`, `generated/languages.svg`, `generated/mission.svg`, `generated/developer-xp.svg`, 16 light/dark arcade SVGs and `profile-3d-contrib/profile-night-rainbow.svg`.
+## 7. Make all GitHub statistics and animations refresh automatically
 
-After merging:
+Your draft already contains real graphics generated from your GitHub activity. They are saved inside the profile repository and won't show broken public-host placeholders.
 
-1. In `alinikan/alinikan`, open **Settings → Actions → General**.
-2. Confirm that GitHub Actions is allowed for this repository and the workflow permissions are compatible with `contents: write` (the generators need to commit SVGs). Leave **Allow GitHub Actions to create and approve pull requests** off unless independently needed — these generators don't need it.
-3. Visit the [Actions tab](https://github.com/alinikan/alinikan/actions). For each workflow below, choose it in the left sidebar, click **Run workflow**, select the **main** branch, and confirm:
-   - **Refresh ALI.OS telemetry**
-   - **Refresh ALI.OS public mission signals**
-   - **ALI.OS arcade contribution games**
-   - **Refresh 3D contribution skyline**
-4. Run **one at a time** the first time and confirm a green result before starting the next; each commits generated files, so simultaneous writes can conflict.
-5. Verify that the README images display real data, that Pac-Man is the main animation, that all other seven games open, and that 3D activity displays.
-6. Automatic schedules are already included. GitHub may disable scheduled workflows after prolonged repository inactivity; if updates stop, re-enable them in Actions and trigger a manual run. GitHub stats are snapshots, not continuously live.
+1. Open repository **Settings → Actions → General**.
+2. Under Actions permissions, ensure workflows are allowed.
+3. The generator workflows use narrow `contents: write` permissions to commit images; if a generator reports a permission error, review **Workflow permissions**, any organization policy, and branch protection. If available, set appropriate read/write permissions for workflows in this repository.
+4. Open the [Actions tab](https://github.com/alinikan/alinikan/actions).
+5. Run the following workflow names on **main**, **one at a time**, choosing **Run workflow**:
+   - **Refresh ALI.OS telemetry** — stats and top languages.
+   - **Refresh ALI.OS public mission signals** — latest public projects and transparent RPG XP.
+   - **ALI.OS arcade contribution games** — Pac-Man plus all seven other modes, generating dark/light SVGs.
+   - **Refresh 3D contribution skyline** — the isometric contribution graph.
+6. Watch each workflow until its job turns green before running another. These workflows write to the repository, so parallel first runs may clash.
+7. Verify `generated/stats.svg`, `generated/languages.svg`, `generated/mission.svg`, `generated/developer-xp.svg`, `generated/arcade/`, and `profile-3d-contrib/profile-night-rainbow.svg` have refreshed.
+8. The schedules are already built. After long inactivity GitHub can disable scheduled Actions on public repositories; if graphics become stale, re-enable the workflows and run them manually.
 
-**Why wait for merge before clicking Run workflow?** GitHub requires a manually dispatchable workflow file to be present on the repository's default branch. Before merging, only the PR-specific validation workflow was available for ongoing draft checks. We temporarily tested the generators via draft-branch push triggers, then removed those temporary triggers.
+**No additional GitHub personal access token is needed.** Actions receives a temporary built-in `GITHUB_TOKEN` automatically.
 
-## 5. Publish the interactive companion website — choose one host
+## 8. Enable the moderated, free guestbook
 
-You only need one hosting option. The GitHub profile and its animated SVGs work regardless of which you choose.
+This stores visitor transmissions as GitHub Issues, without a custom database.
 
-### Option A — GitHub Pages (no AI API needed)
+1. In the profile repository, go to **Settings → General → Features** and confirm **Issues** is enabled.
+2. In Actions choose **Prepare guestbook labels** and run it on `main`. This creates `guestbook-pending` and `guestbook-approved`.
+3. Open [Visitor transmission issue form](https://github.com/alinikan/alinikan/issues/new?template=guestbook.yml) after the PR is merged.
+4. Submit a harmless test issue. GitHub issues are **public** to everyone, even when not approved for your website; visitors must sign in to submit.
+5. Review that issue and add the **guestbook-approved** label only if you're comfortable displaying it on your site.
+6. Refresh your deployed Pages website to see the approved entry.
+7. To hide the entry from the companion website, remove the approved label. It may briefly remain visible due to caching.
+8. Avoid encouraging visitors to share sensitive or private personal information.
 
-1. Open your profile repository → **Settings → Pages**.
-2. Under **Build and deployment**, choose **GitHub Actions** as the Source.
-3. Open the **Actions** tab, choose **Publish ALI.OS Companion Portal**, then click **Run workflow** on `main`.
-4. Once the deploy job is green, use Settings → Pages → **Visit site**, or try the expected project Pages address: `https://alinikan.github.io/alinikan/`.
-5. The project guide, clickable galaxy, Starfall mini-game, guestbook viewer, seasonal site themes, and other static features will work. The model-backed assistant remains off because GitHub Pages doesn't run Node.js API functions.
-6. You can add your verified deployed URL to your profile's **Edit profile → Website** field and replace the README's companion-source link with the live URL.
+The guestbook can remain unused; it doesn't impact your profile or charge you anything.
 
-### Option B — Vercel (recommended if you want real AI)
+## 9. Turn on seasonal themes
 
-1. Go to [Vercel Dashboard](https://vercel.com/dashboard) under your intended existing team.
-2. Click **Add New → Project**, then **Import Git Repository**.
-3. Authorize GitHub access if prompted and select **`alinikan/alinikan`**. Verify this exact repository before proceeding.
-4. Name the project something like `ali-os-portfolio` (only if available).
-5. Set **Root Directory = `site`**. Framework Preset: **Other**. Leave build command unset for a static site + serverless `api/` function.
-6. Preview the PR branch deployment first. Verify its URL, screenshots, responsive layout and local project guide. Don't promote production until you're happy.
-7. If you want to activate the real AI project concierge, follow section 6 before exposing its API endpoint.
-8. Once approved and merged, Vercel's Git integration can deploy `main` to production. In Vercel → Deployments, verify status is **Ready**, then copy the URL from the deployment or assigned project domain.
-9. Put that verified live URL into GitHub **Edit profile → Website** and the README's companion portal link.
+1. Open **Actions → Rotate ALI.OS seasonal themes**.
+2. Select **Run workflow** on `main`.
+3. Choose `auto`, `nebula`, `winter`, or `arcade`.
+4. The workflow updates the README hero image on your profile; its existing schedule handles future monthly changes.
+5. The companion website has a separate theme picker that each visitor can use locally.
 
-You do **not** need both Vercel and GitHub Pages for the same companion website. Vercel Hobby has usage and deployment limits; review your plan before using public serverless AI functionality.
+## 10. Pin the best repositories
 
-## 6. Activate the real OpenAI project concierge (Vercel only)
+Open **https://github.com/alinikan** → **Customize your pins** (or edit pinned items). Pin six public repositories:
 
-The companion works without this setup using its fast, local public-project knowledge guide. The API adapter exists at `site/api/ask.js`, but it is deliberately disabled until you authorize it.
+1. **Pockit**
+2. **LexiLoop**
+3. **Autopilot Car School**
+4. **Recomp / workout-tracker**
+5. **GameRecommender**
+6. **After the Last Bell**
 
-1. Open [OpenAI API Platform](https://platform.openai.com/) and sign in to the intended API organization/project.
-2. Review billing / credits and create a **project-scoped secret API key**. **ChatGPT Plus does not inherently pay for API calls**; API billing is separate.
-3. Before enabling publicly accessible AI, configure organization/project spend controls and Vercel-level rate limiting / abuse protection for `/api/ask`. The application validates questions and limits generated output, but those checks alone are not a distributed rate limiter.
-4. In **Vercel → the ALI.OS project → Settings → Environment Variables**, add a protected server-side `OPENAI_API_KEY`. Do not add it to GitHub source, an issue, a README, or a browser variable prefixed with `VITE_`.
-5. Optionally configure `ALIOS_OPENAI_MODEL=gpt-6-luna`; Luna is the default economical GPT-6 model for this limited curated-data Q&A. Use a model actually available to your API project.
-6. After security controls are in place, change the tag in `site/index.html` from `<meta name="alios-ai-endpoint" content="">` to `<meta name="alios-ai-endpoint" content="/api/ask">`. Commit and let Vercel deploy a preview first.
-7. In that preview, ask “Which projects use TypeScript?”, “Tell me about LexiLoop”, and an unknown-project question. The assistant must stay grounded in curated **public** information and acknowledge unknowns.
-8. Check Vercel Function logs, API usage and project costs. Confirm invalid/oversized requests are rejected. Do not open the endpoint widely without rate limiting.
-9. If API calls fail, the website automatically falls back to the local project guide instead of breaking the whole experience.
+This complements the README's complete project showcase. Optionally update the short profile bio to: "Software Developer | AI & ML · Modern Web Apps · Creative Games" and set the verified Pages site as your Website.
 
-**Important:** The assistant knows only the curated public-project summaries included in its server adapter. It is not a live repository crawler and should not claim access to private files.
+## 11. Troubleshooting
 
-## 7. Enable the optional soundtrack station (Last.fm)
+| Symptom | What to check |
+|---|---|
+| Received an old failure email | Compare the SHA with the newest PR check. Historical failures do not mean the latest revision is failing. |
+| “No jobs were run” again | Check workflow event, PR path filters, Actions permissions and the run summary. Don't disable checks just to make them green. |
+| GitHub Stats or arcade image missing | Run the relevant Action on `main` and inspect logs; check that generated SVGs exist. Cache may be briefly stale. |
+| Generator returns “permission denied” pushing | Check `contents: write`, repository Actions settings and branch rules; don't provide a personal secret token unless absolutely necessary. |
+| Can't see “Run workflow” | Ensure the workflow is on the default `main` branch after merging, then open its dedicated Actions page. |
+| GitHub Pages returns 404 | Verify Settings → Pages has **GitHub Actions** as the source and that the **Publish ALI.OS Companion Portal** workflow successfully deployed. Use **Visit site** to confirm the real URL. |
+| Site layout looks wrong on mobile | Check mobile browser and latest Pages deployment; the PR has desktop and mobile automated tests. |
+| Project Navigator doesn't know a new project | It is a curated local browser index. Update the project list in `site/app.js` and push the change; it is not a live AI chatbot. |
+| Guestbook entries don't appear | Check Issues enabled, approval label present, issue is public and the GitHub public API isn't rate-limited. |
+| Changes take time to appear | Refresh your browser; GitHub image caching and Pages propagation aren't always instant. |
 
-Only follow these steps if you explicitly want visitors to see some of your listening activity.
+## 12. Final verification (tick these after publishing)
 
-1. Create a [Last.fm](https://www.last.fm/) account, or use your existing account.
-2. If you listen through Spotify, connect Spotify in Last.fm **Settings → Applications → Spotify Scrobbling → Connect**. If you use another music app, choose its supported Last.fm scrobbler if one is available.
-3. Get your own Last.fm API key through [Last.fm's API site](https://www.last.fm/api). You don't need to publish the Last.fm API secret or link a Spotify API key to this code.
-4. On GitHub open `alinikan/alinikan` → **Settings → Secrets and variables → Actions**.
-5. Under **Variables**, add `LASTFM_USERNAME` with your Last.fm account name (this is public).
-6. Under **Secrets**, add `LASTFM_API_KEY` with your Last.fm API key. Don't paste it into issues, chats, workflow logs, or source files.
-7. Run **Refresh optional Last.fm soundtrack station** from GitHub Actions.
-8. Confirm `site/now-playing.json` and `generated/now-playing.svg` now represent actual selected public listening activity. The README card and companion site will then show it.
-9. The refresh cadence is several times per day, so older activity should be labelled **Recently played** rather than falsely claimed as live.
-10. To opt out, remove the repository secret/variable, revert the public JSON and SVG to their disabled state, and remove any previously published commits from visible history only if necessary after reviewing retention implications.
+- [ ] PR #1 latest **check** and **browser** jobs both pass.
+- [ ] PR #1 merged to `main`, and the ALI.OS hero appears on your GitHub profile.
+- [ ] All modern featured projects, ML projects and creative games link correctly.
+- [ ] GitHub Stats, language chart, recent projects and RPG XP display actual data.
+- [ ] Pac-Man is the main animated contribution graph; all eight game choices work.
+- [ ] The 3D contribution skyline loads.
+- [ ] Seasonal themes and scheduled refresh workflows work.
+- [ ] GitHub Pages **Visit site** opens the interactive portal, including on mobile.
+- [ ] The Project Navigator, constellation, project filters, Starfall and theme switch work.
+- [ ] Guestbook labels are created; only approved issues display on the website.
+- [ ] Your GitHub profile Website points to the verified Pages domain.
+- [ ] No paid model endpoint, music widget, additional credentials or externally billed services are part of the profile project.
 
-If you do not opt in, the soundtrack station remains tastefully **Not connected**. All other features still work.
+## Final reference links
 
-## 8. Enable and moderate the visitor guestbook
-
-1. Confirm **Settings → General → Features → Issues** is enabled.
-2. From Actions, run **Prepare guestbook labels** once on `main`. This creates `guestbook-pending` and `guestbook-approved`.
-3. Open `https://github.com/alinikan/alinikan/issues/new?template=guestbook.yml` and submit a harmless test message from a GitHub account.
-4. The issue will be **public immediately** but will not appear in the portal yet.
-5. Review the issue. If you approve, add label `guestbook-approved`.
-6. Refresh the companion website. Its public API reader will show the approved message (subject to GitHub caching).
-7. To hide a message, remove the approved label. Moderation is manual and intentional — no automatic publication of unsolicited content.
-8. Ensure the form continues to warn visitors not to post passwords, emails, phone numbers or other private data.
-
-If the **guestbook-approved** label isn't created, the feed can remain empty even when Issues are submitted.
-
-## 9. Seasonal themes and finishing touches
-
-1. The README hero has three original styles: Nebula, Winter and Arcade.
-2. Under Actions, choose **Rotate ALI.OS seasonal themes**.
-3. Choose `auto`, `nebula`, `winter` or `arcade` and run it on `main`. Automatic monthly refreshes follow the configured seasonal rules.
-4. The companion site lets visitors switch themes individually without modifying your profile repo.
-5. On [your GitHub profile](https://github.com/alinikan), consider updating the short **bio**, **website**, **location (optional)** and six **pinned public repositories**. Suggested pins: Pockit, LexiLoop, Autopilot, Recomp, GameRecommender, After the Last Bell.
-6. Keep private repos and credentials out of the project README; pin public demos whose URLs you have actually verified.
-
-## 10. The final verification checklist
-
-- [ ] Latest draft or merged validation shows **both** jobs green (static checks and browser checks).
-- [ ] Old failed `65a7846` email is understood as historical; new checks are green.
-- [ ] Animated header and project screenshots render in dark and light mode.
-- [ ] Recent TypeScript apps, ML experiments and games have working source links.
-- [ ] GitHub Stats, Top Languages, Mission, RPG XP and 3D are **real data**, not previews.
-- [ ] **Pac-Man** is the visible arcade animation; all **8** game options are accessible in the expandable area.
-- [ ] Theme workflow, stats, arcade, 3D and mission workflows refresh without permission errors.
-- [ ] Companion site works on desktop and phone; search, planets, themes and Starfall work.
-- [ ] GitHub Pages **or** Vercel domain is deployed and verified before being added to the README.
-- [ ] AI concierge is either intentionally local-only **or** has a functioning server key, abuse protection, billing safeguards and tested answers.
-- [ ] Last.fm remains disabled unless you explicitly publish listening data.
-- [ ] Guestbook labels are created; approved messages appear, unapproved messages don't.
-- [ ] No API keys, credentials, visitor private data or connected-app tokens appear in repo source.
-- [ ] A rollback is possible via reverting the merge commit if anything goes wrong.
-
-## Helpful links
-
-- [Draft PR](https://github.com/alinikan/alinikan/pull/1)
-- [README preview](https://github.com/alinikan/alinikan/blob/feature/ali-os-sci-fi-arcade-redesign/README.md)
-- [Validation workflow](https://github.com/alinikan/alinikan/actions/workflows/validate.yml)
-- [GitHub Actions](https://github.com/alinikan/alinikan/actions)
-- [GitHub Pages settings](https://github.com/alinikan/alinikan/settings/pages)
+- [Review PR #1](https://github.com/alinikan/alinikan/pull/1)
+- [Preview README branch](https://github.com/alinikan/alinikan/blob/feature/ali-os-sci-fi-arcade-redesign/README.md)
+- [GitHub Actions dashboard](https://github.com/alinikan/alinikan/actions)
 - [GitHub Actions settings](https://github.com/alinikan/alinikan/settings/actions)
-- [GitHub Actions secrets / variables](https://github.com/alinikan/alinikan/settings/secrets/actions)
-- [Vercel Dashboard](https://vercel.com/dashboard)
-- [OpenAI API platform](https://platform.openai.com/)
-- [Last.fm API](https://www.last.fm/api)
+- [GitHub Pages settings](https://github.com/alinikan/alinikan/settings/pages)
+- [GitHub Issue form](https://github.com/alinikan/alinikan/issues/new?template=guestbook.yml)
+- [GitHub profile](https://github.com/alinikan)
 
-**No merge or production deployment should occur merely because this guide exists. You control the final publication.**
+**Publication policy:** PR #1 remains unmerged until you decide to publish. This guide is written for GitHub-only, no-cost operation.
