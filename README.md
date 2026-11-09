@@ -209,37 +209,42 @@ This section uses the maintained [GitHub Readme Stats Action](https://github.com
 
 ## 👾 The arcade
 
-The main game is **Pac-Man**. Expand the side missions for additional styles. All assets will be generated from public GitHub contribution data by the [arcade workflow](./.github/workflows/arcade.yml) once the workflow has run.
+**Pac-Man is the main contribution game.** It is shown below using dark/light theme-aware SVGs. This draft includes clearly labelled preview art; the [arcade workflow](./.github/workflows/arcade.yml) replaces it with **actual contribution-based animation** after its first successful run. The other seven games have their own expandable launch links, including the main Pac-Man mode for quick access.
 
 <div align="center">
+
 <picture>
- <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/alinikan/alinikan/arcade-output/pacman-contribution-graph-dark.svg">
- <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/alinikan/alinikan/arcade-output/pacman-contribution-graph.svg">
- <img src="https://raw.githubusercontent.com/alinikan/alinikan/arcade-output/pacman-contribution-graph.svg" alt="Animated Pac-Man contribution graph, available after the arcade workflow first runs" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="./generated/arcade/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./generated/arcade/pacman-contribution-graph.svg">
+  <img src="./generated/arcade/pacman-contribution-graph.svg" alt="ALI.OS Pac-Man arcade preview; automatically replaced with a real animated contributions graph once the workflow runs" width="100%">
 </picture>
+
 </div>
 
 <details>
-<summary><b>🎮 Alternative arcade modes — Galaga, Breakout, Tetris & more</b></summary>
+<summary><b>🎮 Choose from all eight arcade modes</b></summary>
 
-| Game | View |
+| Mode | Preview / generated graph |
 |---|---|
-| 🚀 Galaga | [Launch Galaga graph](https://raw.githubusercontent.com/alinikan/alinikan/arcade-output/galaga-contribution-graph-dark.svg) |
-| 🧱 Breakout | [Launch Breakout graph](https://raw.githubusercontent.com/alinikan/alinikan/arcade-output/breakout-contribution-graph-dark.svg) |
-| 🐍 Snake | [Launch Snake graph](https://raw.githubusercontent.com/alinikan/alinikan/arcade-output/snake-contribution-graph-dark.svg) |
-| 🟪 Tetris | [Launch Tetris graph](https://raw.githubusercontent.com/alinikan/alinikan/arcade-output/tetris-contribution-graph-dark.svg) |
-| 💣 Bomberman | [Launch Bomberman graph](https://raw.githubusercontent.com/alinikan/alinikan/arcade-output/bomberman-contribution-graph-dark.svg) |
-| 💠 Minesweeper | [Launch Minesweeper graph](https://raw.githubusercontent.com/alinikan/alinikan/arcade-output/minesweeper-contribution-graph-dark.svg) |
-| 🫧 Puzzle Bobble | [Launch Puzzle Bobble graph](https://raw.githubusercontent.com/alinikan/alinikan/arcade-output/puzzle-bobble-contribution-graph-dark.svg) |
+| 👻 **Pac-Man** — main mode | [Launch Pac-Man](./generated/arcade/pacman-contribution-graph-dark.svg) |
+| 🚀 Galaga | [Launch Galaga](./generated/arcade/galaga-contribution-graph-dark.svg) |
+| 🧱 Breakout | [Launch Breakout](./generated/arcade/breakout-contribution-graph-dark.svg) |
+| 🐍 Snake | [Launch Snake](./generated/arcade/snake-contribution-graph-dark.svg) |
+| 🟪 Tetris | [Launch Tetris](./generated/arcade/tetris-contribution-graph-dark.svg) |
+| 💣 Bomberman | [Launch Bomberman](./generated/arcade/bomberman-contribution-graph-dark.svg) |
+| 💠 Minesweeper | [Launch Minesweeper](./generated/arcade/minesweeper-contribution-graph-dark.svg) |
+| 🫧 Puzzle Bobble | [Launch Puzzle Bobble](./generated/arcade/puzzle-bobble-contribution-graph-dark.svg) |
 
-Arcade images will become available once the workflow creates the `arcade-output` branch.
+These currently display branded **activation previews**, not fictional GitHub contribution data. When the workflow runs, it replaces the assets with real contribution visualizations.
 
 </details>
 
 <details>
-<summary><b>🧊 3D contributions — the alternative camera angle</b></summary>
+<summary><b>🧊 3D contributions — an alternative camera angle</b></summary>
 
-The optional [3D contribution skyline workflow](./.github/workflows/profile-3d.yml) will generate a 3D contribution visualization after activation. Until then, the [standard contribution graph](https://github.com/alinikan#user-activity-overview) is the live source.
+![3D contribution skyline activation preview](./profile-3d-contrib/profile-night-rainbow.svg)
+
+The [3D contribution workflow](./.github/workflows/profile-3d.yml) generates a genuine isometric skyline. Until its first successful run, the image is explicitly labelled a preview.
 
 </details>
 
@@ -272,39 +277,48 @@ QUESTION: What am I?
 
 ### 🎮 A tiny browser side quest
 
-[Play **After the Last Bell**](https://after-the-last-bell-game.vercel.app) — an actual story-based game I built. A more elaborate ALI.OS-native mini-game can be hosted separately; GitHub README pages intentionally don't run arbitrary JavaScript.
+[Play **After the Last Bell**](https://after-the-last-bell-game.vercel.app) — an actual story-based game I built. I've also built an original **Starfall** mini-game in the [ALI.OS companion portal source](./site/README.md). It runs in a browser once the companion site is deployed; GitHub profile READMEs don't execute arbitrary JavaScript.
 
 ---
 
-## 🔭 Future transmissions / experimental modules
+## 🔭 Experimental modules and bonus features
 
-These are genuine proposed additions, **not falsely advertised as already connected services**.
+The README stays fast and readable. Advanced interactions live in a **separate, fully coded companion portal** in [`site/`](./site/README.md); it isn't publicly deployed yet.
 
 <details>
-<summary><b>🤖 AI project concierge</b></summary>
+<summary><b>🤖 AI project concierge / ask the archive</b></summary>
 
-A future interactive assistant could answer questions about my public projects, explain implementations, and direct visitors to demos or source files. This needs a deployed app, retrieval and rate limiting — see [integration roadmap](./docs/INTEGRATIONS.md).
+The companion portal includes a working **local project guide** that searches curated public repositories without sending visitor questions to a server. It also includes a server-side OpenAI adapter in [`site/api/ask.js`](./site/api/ask.js), currently disabled until a deployment, API key, spending limits and abuse protection are configured. It must never expose API keys in browser code.
 
 </details>
 
 <details>
-<summary><b>📆 Seasonal visuals and special events</b></summary>
+<summary><b>📆 Auto-rotating seasonal systems</b></summary>
 
-The ALI.OS aesthetic can rotate between default Nebula, Galactic Winter and Arcade Event themes by regenerating SVGs. The base design adapts to light/dark preferences where appropriate; seasonal rotation is optional and described in [integration roadmap](./docs/INTEGRATIONS.md).
+The [theme workflow](./.github/workflows/seasonal.yml) is configured to rotate the README banner by month: **Galactic Winter** (December–February), **Arcade Event** (October), and **Nebula** (the remaining months). It can also be manually set to any of the three. The companion portal has its own instant, visitor-controlled theme switch.
 
-</details>
-
-<details>
-<summary><b>🎧 Now playing — soundtrack station</b></summary>
-
-An opt-in Spotify or Last.fm activity widget can be added after account authorization and a decision about publishing listening activity. Until then, no fake current track appears.
+[See Nebula](./assets/themes/hero-nebula.svg) · [See Winter](./assets/themes/hero-winter.svg) · [See Arcade](./assets/themes/hero-arcade.svg)
 
 </details>
 
 <details>
-<summary><b>📬 Visitor guestbook</b></summary>
+<summary><b>🎧 Now Playing / soundtrack station</b></summary>
 
-A guestbook can use GitHub Discussions once discussions are enabled on this repository, or a moderated external guestbook. It is not yet accepting entries.
+The optional [Last.fm workflow](./.github/workflows/now-playing.yml) and [public display JSON](./site/now-playing.json) are ready. **No listening account is connected**, and no personal listening activity is published by default. With an opt-in Last.fm username and API key stored as a repository secret, the companion portal can display a real recent track (and distinguish current playback from older activity).
+
+</details>
+
+<details>
+<summary><b>📬 Visitor guestbook / transmissions</b></summary>
+
+A [moderated GitHub Issue form](./.github/ISSUE_TEMPLATE/guestbook.yml) and approved-entry reader are prepared. Visitors may submit public messages via GitHub after the PR merges; messages only display in the companion portal after the owner adds `guestbook-approved`. Nothing is automatically approved.
+
+</details>
+
+<details>
+<summary><b>🕹️ Bonus: interactive galaxy and Starfall</b></summary>
+
+The [companion portal](./site/README.md) includes a clickable repository constellation, searchable project cards, theme switcher, a keyboard/touch-friendly **Starfall** mini-game, a local project Q&A guide, and a guestbook viewer. These features require a normal website, not an embedded README.
 
 </details>
 
