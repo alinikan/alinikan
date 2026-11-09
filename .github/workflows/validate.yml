@@ -1,0 +1,54 @@
+name: Validate ALI.OS draft
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "README.md"
+      - "site/**"
+      - "assets/**"
+      - "generated/**"
+      - "profile-3d-contrib/**"
+      - "scripts/**"
+      - "docs/**"
+      - ".github/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - name: Check JavaScript syntax
+        run: |
+          node --check site/app.js
+          node --check site/api/ask.js
+          node --check scripts/update-lastfm.mjs
+      - name: Validate every SVG, local README link, and feature inventory
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          import xml.etree.ElementTree as ET
+          root = Path.cwd()
+          svgs = list(Path('assets').rglob('*.svg')) + list(Path('generated').rglob('*.svg')) + list(Path('profile-3d-contrib').rglob('*.svg'))
+          assert svgs, 'No SVG assets found'
+          for f in svgs:
+              ET.parse(f)
+          readme = Path('README.md').read_text(encoding='utf-8')
+          for name in ['Pac-Man','Galaga','Breakout','Snake','Tetris','Bomberman','Minesweeper','Puzzle Bobble']:
+              assert name in readme, f'Missing arcade game: {name}'
+          assert 'github-readme-stats.vercel.app' not in readme, 'Broken old stats endpoint still referenced'
+          refs = re.findall(r'(?:src|srcset)="(\./[^"]+)"', readme)
+          refs += re.findall(r'\]\((\./[^)]+)\)', readme)
+          for link in refs:
+              resolved = root / link.removeprefix('./')
+              assert resolved.is_file(), f'Broken local README link: {link}'
+          for name in ['site/index.html','site/styles.css','site/app.js','site/api/ask.js','site/now-playing.json','.github/ISSUE_TEMPLATE/guestbook.yml','docs/INTEGRATIONS.md']:
+              assert Path(name).is_file(), f'Missing expected file: {name}'
+          print(f'Validated {len(svgs)} SVGs, {len(refs)} local links, and required features')
+          PY
