@@ -30,7 +30,8 @@ jobs:
       - name: Prepare static-only files
         run: |
           mkdir -p dist
-          cp site/index.html site/styles.css site/app.js site/now-playing.json dist/
+          cp site/index.html site/styles.css site/app.js dist/
+          touch dist/.nojekyll
           test -s dist/index.html
       - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
         with:

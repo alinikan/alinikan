@@ -5,7 +5,7 @@
     {id:"pockit",name:"Pockit",category:"web",label:"PERSONAL FINANCE",symbol:"$",
      color:"#67e8f9",position:[13.9,22],tech:["TypeScript","Budgeting","Web App"],description:"A personal-finance planning app covering spending, budgets, bills, savings, debts and accounts.",repo:"https://github.com/alinikan/pockit",demo:"https://pockit-budget.vercel.app",image:"https://raw.githubusercontent.com/alinikan/pockit/main/docs/media/pockit-home-desktop.png"},
     {id:"lexiloop",name:"LexiLoop",category:"web",label:"AI / EDUCATION",symbol:"Aa",
-     color:"#c4b5fd",position:[36.7,19],tech:["TypeScript","OpenAI","Supabase","Learning"],description:"A vocabulary learning app with spaced practice, personal wordbooks, and AI-assisted lesson generation.",repo:"https://github.com/alinikan/LexiLoop",demo:"https://lexiloop-ali.vercel.app",image:"https://raw.githubusercontent.com/alinikan/LexiLoop/main/public/icon-512.png"},
+     color:"#c4b5fd",position:[36.7,19],tech:["TypeScript","Supabase","Education","Vocabulary"],description:"A vocabulary learning app with spaced practice, personal wordbooks, and AI-assisted lesson generation.",repo:"https://github.com/alinikan/LexiLoop",demo:"https://lexiloop-ali.vercel.app",image:"https://raw.githubusercontent.com/alinikan/LexiLoop/main/public/icon-512.png"},
     {id:"autopilot",name:"Autopilot",category:"web",label:"CAR EDUCATION",symbol:"✦",
      color:"#38bdf8",position:[78.3,22.7],tech:["React","TypeScript","Supabase","Quizzes"],description:"A visual car-learning school with guided lessons, photo recognition, quizzes and gamified review.",repo:"https://github.com/alinikan/autopilot-car-school",demo:"https://autopilot-car-school.vercel.app",image:"https://raw.githubusercontent.com/alinikan/autopilot-car-school/main/docs/images/dashboard.png"},
     {id:"recomp",name:"Recomp",category:"web",label:"FITNESS TOOL",symbol:"+",
@@ -101,13 +101,10 @@
     }
     return {text:"I couldn't match that to my curated public project archive. Try a project name or technology, or browse the full repository list.",links:[{url:"https://github.com/alinikan?tab=repositories",label:"All public repositories"}]};
   }
-  async function ask(question){
-    say(question,"user");const endpoint=document.querySelector('meta[name="alios-ai-endpoint"]')?.content;
-    if(endpoint){try{
-      const resp=await fetch(endpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({question}),signal:AbortSignal.timeout(12000)});
-      if(resp.ok){const data=await resp.json();if(typeof data.answer==="string"&&data.answer.length<4000){say(data.answer,"bot",Array.isArray(data.links)?data.links.filter(l=>typeof l?.url==="string"&&/^https:\/\/(github\.com|[a-z0-9-]+\.vercel\.app)\//i.test(l.url)).slice(0,3):[]);return;}}
-    }catch(_){}}
-    const result=answer(question);say(result.text,"bot",result.links||[]);
+  function ask(question){
+    say(question,"user");
+    const result=answer(question);
+    say(result.text,"bot",result.links||[]);
   }
   form.addEventListener("submit",event=>{event.preventDefault();const q=qInput.value.trim();if(!q)return;qInput.value="";void ask(q);});
   document.querySelectorAll("[data-question]").forEach(b=>b.addEventListener("click",()=>{qInput.value=b.dataset.question;form.requestSubmit();}));
@@ -156,9 +153,4 @@
   }
   void loadGuestbook();
 
-  async function loadMusic(){try{const res=await fetch("https://raw.githubusercontent.com/alinikan/alinikan/main/site/now-playing.json",{cache:"no-store"});if(!res.ok)return;const data=await res.json();if(!data.enabled||!data.track||!data.artist)return;
-      $("#music-title").textContent=data.track;const meta=$("#music-meta");meta.replaceChildren();meta.append(document.createTextNode((data.nowPlaying&&data.updatedAt&&Date.now()-Date.parse(data.updatedAt)<10*60*1000?"Now playing":"Recently played")+" · "+data.artist));
-      if(data.url&&/^https:\/\/www\.last\.fm\/music\//.test(data.url)){meta.append(document.createTextNode(" · "));meta.append(external(data.url,"Listen ↗"));}
-    }catch(_){}}
-  void loadMusic();
 })();

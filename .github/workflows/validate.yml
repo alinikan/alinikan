@@ -26,35 +26,7 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           node --check site/app.js
-          node --check site/api/ask.js
-          node --check scripts/update-lastfm.mjs
           node --check scripts/update-mission.mjs
-      - name: Test opt-out behavior of the soundtrack module
-        env:
-          LASTFM_USERNAME: ""
-          LASTFM_API_KEY: ""
-        run: |
-          node scripts/update-lastfm.mjs
-          python3 - <<'PY'
-          import json
-          import xml.etree.ElementTree as ET
-          record = json.load(open('site/now-playing.json'))
-          assert record.get('enabled') is False
-          ET.parse('generated/now-playing.svg')
-          assert 'NOT CONNECTED' in open('generated/now-playing.svg').read()
-          print('Soundtrack privacy default: verified')
-          PY
-      - name: Verify the AI endpoint does not operate without its secret
-        env:
-          OPENAI_API_KEY: ""
-        run: |
-          node - <<'NODE'
-          const endpoint = require('./site/api/ask.js');
-          let code = null;
-          const req = {method:'POST',headers:{host:'localhost'},body:{question:'What is Pockit?'}};
-          const res = {setHeader(){},status(n){code=n;return this;},json(){return this;}};
-          endpoint(req,res).then(()=>{if(code!==503)process.exit(1);console.log('AI disabled without secret: verified');}).catch(()=>process.exit(1));
-          NODE
       - name: Validate every SVG, local README link, and feature inventory
         run: |
           python3 - <<'PY'
@@ -70,12 +42,20 @@ jobs:
           for name in ['Pac-Man','Galaga','Breakout','Snake','Tetris','Bomberman','Minesweeper','Puzzle Bobble']:
               assert name in readme, f'Missing arcade game: {name}'
           assert 'github-readme-stats.vercel.app' not in readme, 'Broken old stats endpoint still referenced'
+          for forbidden in ['OpenAI API','Last.fm','Spotify','now-playing','api/ask','alios-ai-endpoint']:
+              assert forbidden.lower() not in readme.lower(), f'Removed third-party dependency still in README: {forbidden}'
+          for removed in ['site/api/ask.js','site/now-playing.json','scripts/update-lastfm.mjs','.github/workflows/now-playing.yml','generated/now-playing.svg']:
+              assert not Path(removed).exists(), f'Removed paid/music integration still tracked: {removed}'
+          for page in ['site/index.html','site/app.js','site/README.md','docs/INTEGRATIONS.md','docs/LAUNCH_CHECKLIST.md']:
+              content = Path(page).read_text(encoding='utf-8').lower()
+              for forbidden in ['openai_api_key','lastfm_','alios-ai-endpoint','now-playing','last.fm','spotify']:
+                  assert forbidden not in content, f'{page} retains removed integration: {forbidden}'
           refs = re.findall(r'(?:src|srcset)="(\./[^"]+)"', readme)
           refs += re.findall(r'\]\((\./[^)]+)\)', readme)
           for link in refs:
               resolved = root / link.removeprefix('./')
               assert resolved.is_file(), f'Broken local README link: {link}'
-          for name in ['site/index.html','site/styles.css','site/app.js','site/api/ask.js','site/now-playing.json','scripts/update-mission.mjs','generated/mission.svg','generated/developer-xp.svg','generated/now-playing.svg','.github/ISSUE_TEMPLATE/guestbook.yml','docs/INTEGRATIONS.md']:
+          for name in ['site/index.html','site/styles.css','site/app.js','scripts/update-mission.mjs','generated/mission.svg','generated/developer-xp.svg','.github/ISSUE_TEMPLATE/guestbook.yml','docs/INTEGRATIONS.md']:
               assert Path(name).is_file(), f'Missing expected file: {name}'
           print(f'Validated {len(svgs)} SVGs, {len(refs)} local links, and required features')
           PY

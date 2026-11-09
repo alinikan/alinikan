@@ -287,14 +287,14 @@ QUESTION: What am I?
 
 ---
 
-## 🔭 Experimental modules and bonus features
+## 🔭 Bonus features and interactive portal
 
-The README stays fast and readable. Advanced interactions live in a separate, **working and browser-tested companion portal** in [`site/`](./site/README.md). The portal is ready to deploy, but hasn't been published yet. [View the setup and launch checklist](./docs/LAUNCH_CHECKLIST.md).
+The README stays fast and readable. Advanced interactions live in a separate, **working and browser-tested, completely free companion website** in [`site/`](./site/README.md). It is designed for GitHub Pages, requires no extra accounts or API keys, and is ready for you to publish. [View the free setup and launch checklist](./docs/LAUNCH_CHECKLIST.md).
 
 <details>
-<summary><b>🤖 AI project concierge / ask the archive</b></summary>
+<summary><b>📚 Project Navigator / ask the archive</b></summary>
 
-The companion portal includes a working **local project guide** that searches curated public repositories without sending visitor questions to a server. It also includes a server-side OpenAI adapter in [`site/api/ask.js`](./site/api/ask.js), currently disabled until a deployment, API key, spending limits and abuse protection are configured. It must never expose API keys in browser code.
+The companion website includes a **free, built-in project guide** that helps visitors explore Ali's public projects by technology, category, and description. Everything runs directly in the browser with no paid AI model, registration, API key, or server backend. It links to real source repositories and hosted project demos.
 
 </details>
 
@@ -304,15 +304,6 @@ The companion portal includes a working **local project guide** that searches cu
 The [theme workflow](./.github/workflows/seasonal.yml) is configured to rotate the README banner by month: **Galactic Winter** (December–February), **Arcade Event** (October), and **Nebula** (the remaining months). It can also be manually set to any of the three. The companion portal has its own instant, visitor-controlled theme switch.
 
 [See Nebula](./assets/themes/hero-nebula.svg) · [See Winter](./assets/themes/hero-winter.svg) · [See Arcade](./assets/themes/hero-arcade.svg)
-
-</details>
-
-<details>
-<summary><b>🎧 Now Playing / soundtrack station</b></summary>
-
-<p align="center"><img src="./generated/now-playing.svg" alt="Opt-in public soundtrack station showing connection status" width="85%"></p>
-
-The optional [Last.fm workflow](./.github/workflows/now-playing.yml) and [public display JSON](./site/now-playing.json) are ready. **No listening account is connected**, and no personal listening activity is published by default. With an opt-in Last.fm username and API key stored as a repository secret, the companion portal can display a real recent track (and distinguish current playback from older activity).
 
 </details>
 

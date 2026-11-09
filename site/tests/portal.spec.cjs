@@ -12,7 +12,8 @@ test('loads the portal and eight real project cards', async ({ page }) => {
   await expect(page).toHaveTitle(/ALI\.OS/);
   await expect(page.getByRole('heading', { name: 'Explore my builds' })).toBeVisible();
   await expect(page.locator('.project-card')).toHaveCount(8);
-  await expect(page.locator('#music-title')).toHaveText('Not connected');
+  await expect(page.locator('.music-panel')).toHaveCount(0);
+  await expect(page.locator('meta[name="alios-ai-endpoint"]')).toHaveCount(0);
   const screenshots = 'screenshots';
   fs.mkdirSync(screenshots, { recursive: true });
   await page.screenshot({ path: screenshots + '/' + test.info().project.name + '-full-page.png', fullPage: true, animations: 'disabled' });
@@ -31,7 +32,7 @@ test('filters projects by category, search and constellation planet', async ({ p
   await expect(page.locator('.project-card h3')).toHaveText('Pockit');
 });
 
-test('answers curated project questions without an AI account', async ({ page }) => {
+test('answers curated project questions locally without a paid API', async ({ page }) => {
   await page.locator('#chat-question').fill('What is Pockit?');
   await page.getByRole('button', { name: 'Send question' }).click();
   await expect(page.locator('.chat-log .bubble.bot').last()).toContainText('Pockit');
