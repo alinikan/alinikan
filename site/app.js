@@ -3,17 +3,17 @@
   const $ = (selector) => document.querySelector(selector);
   const projects = [
     {id:"pockit",name:"Pockit",category:"web",label:"PERSONAL FINANCE",symbol:"$",
-     color:"#67e8f9",position:[13.9,22],tech:["TypeScript","Budgeting","Web App"],description:"A personal-finance planning app covering spending, budgets, bills, savings, debts and accounts.",repo:"https://github.com/alinikan/pockit",demo:"https://pockit-budget.vercel.app"},
+     color:"#67e8f9",position:[13.9,22],tech:["TypeScript","Budgeting","Web App"],description:"A personal-finance planning app covering spending, budgets, bills, savings, debts and accounts.",repo:"https://github.com/alinikan/pockit",demo:"https://pockit-budget.vercel.app",image:"https://raw.githubusercontent.com/alinikan/pockit/main/docs/media/pockit-home-desktop.png"},
     {id:"lexiloop",name:"LexiLoop",category:"web",label:"AI / EDUCATION",symbol:"Aa",
-     color:"#c4b5fd",position:[36.7,19],tech:["TypeScript","OpenAI","Supabase","Learning"],description:"A vocabulary learning app with spaced practice, personal wordbooks, and AI-assisted lesson generation.",repo:"https://github.com/alinikan/LexiLoop",demo:"https://lexiloop-ali.vercel.app"},
+     color:"#c4b5fd",position:[36.7,19],tech:["TypeScript","OpenAI","Supabase","Learning"],description:"A vocabulary learning app with spaced practice, personal wordbooks, and AI-assisted lesson generation.",repo:"https://github.com/alinikan/LexiLoop",demo:"https://lexiloop-ali.vercel.app",image:"https://raw.githubusercontent.com/alinikan/LexiLoop/main/public/icon-512.png"},
     {id:"autopilot",name:"Autopilot",category:"web",label:"CAR EDUCATION",symbol:"✦",
-     color:"#38bdf8",position:[78.3,22.7],tech:["React","TypeScript","Supabase","Quizzes"],description:"A visual car-learning school with guided lessons, photo recognition, quizzes and gamified review.",repo:"https://github.com/alinikan/autopilot-car-school",demo:"https://autopilot-car-school.vercel.app"},
+     color:"#38bdf8",position:[78.3,22.7],tech:["React","TypeScript","Supabase","Quizzes"],description:"A visual car-learning school with guided lessons, photo recognition, quizzes and gamified review.",repo:"https://github.com/alinikan/autopilot-car-school",demo:"https://autopilot-car-school.vercel.app",image:"https://raw.githubusercontent.com/alinikan/autopilot-car-school/main/docs/images/dashboard.png"},
     {id:"recomp",name:"Recomp",category:"web",label:"FITNESS TOOL",symbol:"+",
-     color:"#5eead4",position:[84.4,71],tech:["React","TypeScript","Supabase","Fitness"],description:"A mobile-first training and nutrition companion with structured workouts and progress tracking.",repo:"https://github.com/alinikan/workout-tracker",demo:"https://ali-workout.vercel.app"},
+     color:"#5eead4",position:[84.4,71],tech:["React","TypeScript","Supabase","Fitness"],description:"A mobile-first training and nutrition companion with structured workouts and progress tracking.",repo:"https://github.com/alinikan/workout-tracker",demo:"https://ali-workout.vercel.app",image:"https://raw.githubusercontent.com/alinikan/workout-tracker/main/public/og.png"},
     {id:"steam",name:"Steam ML",category:"ai",label:"MACHINE LEARNING",symbol:"◎",
      color:"#fbbf24",position:[60.3,79.3],tech:["Python","Machine Learning","NLP","scikit-learn"],description:"A Steam game recommendation and popularity prediction system using content analysis and NLP.",repo:"https://github.com/alinikan/GameRecommender"},
     {id:"bell",name:"Last Bell",category:"game",label:"NARRATIVE GAME",symbol:"★",
-     color:"#fb7185",position:[19.5,79.7],tech:["JavaScript","CSS","Pixel Art","Games"],description:"An original browser choice game with animated pixel art and branching scenes.",repo:"https://github.com/alinikan/after-the-last-bell-game",demo:"https://after-the-last-bell-game.vercel.app"},
+     color:"#fb7185",position:[19.5,79.7],tech:["JavaScript","CSS","Pixel Art","Games"],description:"An original browser choice game with animated pixel art and branching scenes.",repo:"https://github.com/alinikan/after-the-last-bell-game",demo:"https://after-the-last-bell-game.vercel.app",image:"https://raw.githubusercontent.com/alinikan/after-the-last-bell-game/main/assets/classroom.png"},
     {id:"cat",name:"Cat AI",category:"ai",label:"DEEP LEARNING",symbol:"AI",
      color:"#a78bfa",position:[50,89],tech:["Python","Neural Networks","Machine Learning"],description:"An image classifier built with a deep neural network and backpropagation.",repo:"https://github.com/alinikan/Cat-Identifier"},
     {id:"maze",name:"Maze",category:"game",label:"JAVA GAME",symbol:"▧",
@@ -40,7 +40,7 @@
     grid.replaceChildren();
     for(const p of filtered){
       const card=document.createElement("article");card.className="project-card";card.id="project-"+p.id;card.tabIndex=-1;
-      card.append(addText("span",p.label,"category"),addText("h3",p.name),addText("p",p.description));
+      if(p.image){const thumb=document.createElement("img");thumb.src=p.image;thumb.className="project-thumb";thumb.loading="lazy";thumb.alt="Screenshot or official artwork from the "+p.name+" repository";thumb.decoding="async";card.append(thumb);}card.append(addText("span",p.label,"category"),addText("h3",p.name),addText("p",p.description));
       const tags=document.createElement("div");tags.className="tags";for(const t of p.tech)tags.append(addText("span",t,"tag"));card.append(tags);
       const actions=document.createElement("div");actions.className="project-actions";actions.append(external(p.repo,"Source ↗"));if(p.demo)actions.append(external(p.demo,"Live demo ↗"));card.append(actions);grid.append(card);
     }
